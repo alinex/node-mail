@@ -1,10 +1,14 @@
 {
   "name": "alinex-mail",
   "version": "0.0.0",
-  "description": "",
+  "description": "Easy email sending with configuration support.",
   "copyright": "Alexander Schilling 2016",
   "private": false,
-  "keywords": [],
+  "keywords": [
+    "email",
+    "mail",
+    "sendmail"
+  ],
   "homepage": "http://alinex.github.io/node-mail/",
   "repository": {
     "type": "git",
