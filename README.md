@@ -62,9 +62,139 @@ mail.send
   subject: 'Test'
 ```
 
+The above setup is all you may need to send an email. All the missing information
+is taken from it's base. Which is like always defined as a configuration setting.
+
 
 Configuration
 -------------------------------------------------
+
+The configuration is based on multiple email templates.
+
+### Email Templates
+
+They will be defined under `/email`:
+
+``` yaml
+# Email Templates
+# =================================================
+
+
+# Default Email Templates
+# -------------------------------------------------
+This will extend/overwrite the allready existing setup within the code.
+default:
+  # specify how to connect to the server
+  transport: smtp://alexander.schilling%40mycompany.de:<PASSWORD>@mail.mycompany.de
+  # sender address
+  from: alexander.schilling@mycompany.de
+  replyTo: somebody@mycompany.de
+
+  # content
+  locale: en
+  subject: >
+    Database Report: {{name}}
+  body: |+
+    {{conf.title}}
+    ==========================================================================
+
+    {{conf.description}}
+
+    Started at {{dateFormat date "LLL"}}:
+
+    | Zeilen | Datei    | Beschreibung |
+    | ------:| -------- | ------------ |
+    {{#each result}}
+    | {{rows}} | {{file}} | {{description}} |
+    {{/each}}
+
+    Find the files attached to your mail if data available!
+```
+
+To make it more modular you may also add a `base` setting to use the setting defined
+there as a base and the options here may overwrite or enhance the base setup.
+
+#### Transport
+
+The transport setting defines how to send the email. This should specify the
+connection for the mailserver to use for sending. It is possible to do this using
+a connection url like above with the syntax:
+
+    <protocol>://<user>:<password>@<server>:<port>
+
+Or you may specify it as object like:
+
+``` yaml
+transport:
+  pool: <boolean> # use pooled connections defaults to false
+  direct: <boolean> # set to true to try to connect directly to recipients MX
+  service: <string> # name of well-known service (will set host, port and secure options)
+  # services: 1und1, AOL, DebugMail.io, DynectEmail, FastMail, GandiMail, Gmail,
+  # Godaddy, GodaddyAsia, GodaddyEurope, hot.ee, Hotmail, iCloud, mail.ee, Mail.ru,
+  # Mailgun, Mailjet, Mandrill, Naver, Postmark, QQ, QQex, SendCloud, SendGrid,
+  # SES, Sparkpost, Yahoo, Yandex, Zoho
+  host: <string> # the hostname or IP address to connect to
+  port: <integer> # the port to connect to (defaults to 25 or 465)
+  secure: <boolean> # if true the connection will only use TLS else (the default)
+  # TLS may still be upgraded to if available via the STARTTLS command
+  ignoreTLS: <boolean> # if this is true and secure is false, TLS will not be used
+  requireTLS: <boolean> # if this is true and secure is false, it uses STARTTLS
+  # even if the server does not advertise support for it
+  tls: <object> # additional socket options like `{rejectUnauthorized: true}`
+  auth: # authentication objects
+    user: <string> # the username
+    pass: <string> # the password for the user
+  authMethod: <string> # preferred authentication method, eg. ‘PLAIN’
+  name: <string> # hostname of the client, used for identifying to the server
+  localAddress: <string> # the local interface to bind to for network connections
+  connectionTimeout: <integer> # milliseconds to wait for the connection to establish
+  greetingTimeout: <integer> # milliseconds to wait for the greeting after connection is established
+  socketTimeout: <integer> # milliseconds of inactivity to allow
+  debug: <boolean> # set to true to log the complete SMTP traffic
+  # if pool is set to true:
+  maxConnections: <integer> # the count of maximum simultaneous connections (defaults to 5)
+  maxMessages: <integer> # limits the message count to be sent using a single connection (defaults to 100)
+  rateLimit: <integer> # limits the message count to be sent in a second (defaults to false)    
+```
+
+#### Addressing
+
+First you can define the sender address using:
+
+``` yaml
+from: <string> # the address used as sender(often the same as used in transport)
+replyTo: <string> # address which should be used for replys
+```
+
+And you give the addresses to send the mail to. In the following fields: `to`, `cc`
+and `bcc` you may give a single address or a list of addresses to use.
+All e-mail addresses can be plain e-mail addresses
+
+    name@mymailserver.com
+
+or with formatted name (includes unicode support)
+
+    "My Name" <name@mymailserver.com>
+
+#### Content
+
+The content of the mail consists of an subject line which should be not to long
+and the body. The body is given as [Markdown](http://alinex.github.io/develop/lang/markdown.html)
+syntax and supports all possibilities from
+[report](http://alinex.github.io/node-report/README.md.html#markup%20syntax).
+This will be converted to a plain text and html version for sending so that the
+mail client can choose the format to display.
+
+Like you see above, you can use handlebar syntax to use some variables from the
+code. This is possible in subject and body. And you may specify a
+local to use for date formatting.
+
+You can also define different templates which can be referenced from within the
+job.
+
+The given context variables are used.
+
+Find more examples at [validator](http://alinex.github.io/node-validator/README.md.html#handlebars).
 
 
 
