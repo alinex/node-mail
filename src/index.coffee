@@ -52,7 +52,7 @@ exports.mail = (setup, context, cb) ->
       moment.locale oldLocale
     # send email
     mails = setup.to?.map (e) -> e.replace /".*?" <(.*?)>/g, '$1'
-    debug chalk.grey "#{meta.job}: sending email to #{mails?.join ', '}..."
+    debug chalk.grey "sending email to #{mails?.join ', '}..."
     # setup transporter
     transporter = nodemailer.createTransport setup.transport ? 'direct:?name=hostname'
     transporter.use 'compile', inlineBase64
