@@ -33,13 +33,13 @@ exports.setup = async.once this, (cb) ->
 
 # Send Email
 # -------------------------------------------------
-exports.mail = (setup, context, cb) ->
+exports.send = (setup, context, cb) ->
   # configure email
   setup = object.clone setup
   # use base settings
   while setup.base
     debug chalk.grey "loading base template #{setup.base}"
-    base = config.get "/dbreport/email/#{setup.base}"
+    base = config.get "/email/#{setup.base}"
     delete setup.base
     setup = object.extend {}, base, setup
   # support handlebars
