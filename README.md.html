@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>README.md</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" media="all" href="doc-style.css" />
+  <script src="doc-filelist.js"></script>
+  <script>
+    var relativeDir = "";
+    var thisFile = "home/alex/github/node-mail/README.md";
+    var defaultSidebar = true;
+  </script>
+  <script src="doc-script.js"></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0" /></head>
+<body>
+  <nav>
+<div class="logo"><a href="http://alinex.github.io"
+  onmouseover="logo.src='https://alinex.github.io/images/Alinex-200.png'"
+  onmouseout="logo.src='https://alinex.github.io/images/Alinex-black-200.png'">
+  <img name="logo" src="https://alinex.github.io/images/Alinex-black-200.png"
+    width="150" title="Alinex Universe Homepage" />
+  </a>
+  <img src="http://alinex.github.io/images/Alinex-200.png"
+    style="display:none" alt="preloading" />
+</div>
+<div class="links">
+  <a href="http://alinex.github.io/blog"
+    class="btn btn-primary"><span class="glyphicon-pencil"></span> Blog</a>
+  <a href="http://alinex.github.io/develop"
+    class="btn btn-primary"><span class="glyphicon-book"></span> Develop</a>
+  <a href="http://alinex.github.io/code.html"
+    class="btn btn-warning"><span class="glyphicon-cog"></span> Code</a>
+</div>
+</nav><div id="sidebar_wrapper">
+    <div id="sidebar_switch">
+      <span class="tree">Files</span>
+      <span class="headings">Headings</span>
+    </div>
+    <div id="tree"></div>
+    <div id="headings">
+
+      <div class="heading h1">
+        <a href="#package-alinex-mail">Package: alinex-mail</a>
+      </div>
+
+      <div class="heading h2">
+        <a href="#install">Install</a>
+      </div>
+
+      <div class="heading h2">
+        <a href="#usage">Usage</a>
+      </div>
+
+      <div class="heading h2">
+        <a href="#configuration">Configuration</a>
+      </div>
+
+      <div class="heading h3">
+        <a href="#email-templates">Email Templates</a>
+      </div>
+
+      <div class="heading h4">
+        <a href="#transport">Transport</a>
+      </div>
+
+      <div class="heading h4">
+        <a href="#addressing">Addressing</a>
+      </div>
+
+      <div class="heading h4">
+        <a href="#content">Content</a>
+      </div>
+
+      <div class="heading h2">
+        <a href="#license">License</a>
+      </div>
+
+    </div>
+  </div>
+  <div id="sidebar-toggle"></div>
+  <div id="container" tabindex="0"><a id="fork" href="https://github.com/alinex/node-mail" title="Fork me on GitHub"></a>
+    <div class="docs markdown"><div class="pilwrap" id="package-alinex-mail">
+  <h1>
+    <a href="#package-alinex-mail" name="package-alinex-mail" class="pilcrow"></a>
+Package: alinex-mail
+  </h1>
+</div>
+<p><a href="https://travis-ci.org/alinex/node-mail"><img src="https://travis-ci.org/alinex/node-mail.svg?branch=master" alt="Build Status"></a>
+<a href="https://coveralls.io/r/alinex/node-mail?branch=master"><img src="https://coveralls.io/repos/alinex/node-mail/badge.png?branch=master" alt="Coverage Status"></a>
+<a href="https://gemnasium.com/alinex/node-mail"><img src="https://gemnasium.com/alinex/node-mail.png" alt="Dependency Status"></a></p>
+<p>An easy to use module for sending mails.</p>
+<ul>
+<li>support for handlebars</li>
+<li>support for report</li>
+<li>support for templates</li>
+<li>fully configurable</li>
+</ul>
+<p>While sending mails it will also transform inline images in html into cid images
+attached to the mail to make it more standard conform.</p>
+<blockquote>
+<p>It is one of the modules of the <a href="http://alinex.github.io/code.html">Alinex Universe</a>
+following the code standards defined in the <a href="http://alinex.github.io/develop">General Docs</a>.</p>
+</blockquote>
+<div class="pilwrap" id="install">
+  <h2>
+    <a href="#install" name="install" class="pilcrow"></a>
+Install
+  </h2>
+</div>
+<p><a href="https://www.npmjs.com/package/alinex-mail"><img src="https://nodei.co/npm/alinex-mail.png?downloads=true&amp;downloadRank=true&amp;stars=true" alt="NPM">
+<img src="https://nodei.co/npm-dl/alinex-mail.png?months=9&amp;height=3" alt="Downloads">
+</a></p>
+<p>The easiest way is to let npm add the module directly to your modules
+(from within you node modules directory):</p>
+<pre><code class="sh">npm install alinex-mail --save
+</code></pre>
+<p>And update it to the latest version later:</p>
+<pre><code class="sh">npm update alinex-mail --save
+</code></pre>
+<p>This package will install a lot of subpackages to ensure the full functionality
+but only the ones really needed are loaded on demand.</p>
+<p>Always have a look at the latest <a href="Changelog.md.html.html">changes</a>.</p>
+<div class="pilwrap" id="usage">
+  <h2>
+    <a href="#usage" name="usage" class="pilcrow"></a>
+Usage
+  </h2>
+</div>
+<p>The first step is to load the module:</p>
+<pre><code class="coffee">mail = <span class="hljs-built_in">require</span> <span class="hljs-string">'alinex-mail'</span>
+</code></pre>
+<p>And now you simply send your mails:</p>
+<pre><code class="coffee">mail.send
+  <span class="hljs-attribute">base</span>: <span class="hljs-string">'default'</span>
+  <span class="hljs-attribute">subject</span>: <span class="hljs-string">'Test'</span>
+</code></pre>
+<p>The above setup is all you may need to send an email. All the missing information
+is taken from it's base. Which is like always defined as a configuration setting.</p>
+<div class="pilwrap" id="configuration">
+  <h2>
+    <a href="#configuration" name="configuration" class="pilcrow"></a>
+Configuration
+  </h2>
+</div>
+<p>The configuration is based on multiple email templates.</p>
+<div class="pilwrap" id="email-templates">
+  <h3>
+    <a href="#email-templates" name="email-templates" class="pilcrow"></a>
+Email Templates
+  </h3>
+</div>
+<p>They will be defined under <code>/email</code>:</p>
+<pre><code class="yaml"># Email Templates
+# =================================================
+
+
+# Default Email Templates
+# -------------------------------------------------
+This will extend/overwrite the allready existing setup within the code.
+default:
+  # specify how to connect to the server
+  transport: smtp://alexander.schilling%40mycompany.de:&lt;PASSWORD&gt;@mail.mycompany.de
+  # sender address
+  from: alexander.schilling@mycompany.de
+  replyTo: somebody@mycompany.de
+
+  # content
+  locale: en
+  subject: &gt;
+    Database Report: {{name}}
+  body: |+
+    {{conf.title}}
+    ==========================================================================
+
+    {{conf.description}}
+
+    Started at {{dateFormat date &quot;LLL&quot;}}:
+
+    | Zeilen | Datei    | Beschreibung |
+    | ------:| -------- | ------------ |
+    {{#each result}}
+    | {{rows}} | {{file}} | {{description}} |
+    {{/each}}
+
+    Find the files attached to your mail if data available!
+</code></pre>
+<p>To make it more modular you may also add a <code>base</code> setting to use the setting defined
+there as a base and the options here may overwrite or enhance the base setup.</p>
+<div class="pilwrap" id="transport">
+  <h4>
+    <a href="#transport" name="transport" class="pilcrow"></a>
+Transport
+  </h4>
+</div>
+<p>The transport setting defines how to send the email. This should specify the
+connection for the mailserver to use for sending. It is possible to do this using
+a connection url like above with the syntax:</p>
+<pre><code>&lt;protocol&gt;://&lt;user&gt;:&lt;password&gt;@&lt;server&gt;:&lt;port&gt;
+</code></pre>
+<p>Or you may specify it as object like:</p>
+<pre><code class="yaml">transport:
+  pool: &lt;boolean&gt; # use pooled connections defaults to false
+  direct: &lt;boolean&gt; # set to true to try to connect directly to recipients MX
+  service: &lt;string&gt; # name of well-known service (will set host, port and secure options)
+  # services: 1und1, AOL, DebugMail.io, DynectEmail, FastMail, GandiMail, Gmail,
+  # Godaddy, GodaddyAsia, GodaddyEurope, hot.ee, Hotmail, iCloud, mail.ee, Mail.ru,
+  # Mailgun, Mailjet, Mandrill, Naver, Postmark, QQ, QQex, SendCloud, SendGrid,
+  # SES, Sparkpost, Yahoo, Yandex, Zoho
+  host: &lt;string&gt; # the hostname or IP address to connect to
+  port: &lt;integer&gt; # the port to connect to (defaults to 25 or 465)
+  secure: &lt;boolean&gt; # if true the connection will only use TLS else (the default)
+  # TLS may still be upgraded to if available via the STARTTLS command
+  ignoreTLS: &lt;boolean&gt; # if this is true and secure is false, TLS will not be used
+  requireTLS: &lt;boolean&gt; # if this is true and secure is false, it uses STARTTLS
+  # even if the server does not advertise support for it
+  tls: &lt;object&gt; # additional socket options like `{rejectUnauthorized: true}`
+  auth: # authentication objects
+    user: &lt;string&gt; # the username
+    pass: &lt;string&gt; # the password for the user
+  authMethod: &lt;string&gt; # preferred authentication method, eg. ‘PLAIN’
+  name: &lt;string&gt; # hostname of the client, used for identifying to the server
+  localAddress: &lt;string&gt; # the local interface to bind to for network connections
+  connectionTimeout: &lt;integer&gt; # milliseconds to wait for the connection to establish
+  greetingTimeout: &lt;integer&gt; # milliseconds to wait for the greeting after connection is established
+  socketTimeout: &lt;integer&gt; # milliseconds of inactivity to allow
+  debug: &lt;boolean&gt; # set to true to log the complete SMTP traffic
+  # if pool is set to true:
+  maxConnections: &lt;integer&gt; # the count of maximum simultaneous connections (defaults to 5)
+  maxMessages: &lt;integer&gt; # limits the message count to be sent using a single connection (defaults to 100)
+  rateLimit: &lt;integer&gt; # limits the message count to be sent in a second (defaults to false)    
+</code></pre>
+<div class="pilwrap" id="addressing">
+  <h4>
+    <a href="#addressing" name="addressing" class="pilcrow"></a>
+Addressing
+  </h4>
+</div>
+<p>First you can define the sender address using:</p>
+<pre><code class="yaml">from: &lt;string&gt; # the address used as sender(often the same as used in transport)
+replyTo: &lt;string&gt; # address which should be used for replys
+</code></pre>
+<p>And you give the addresses to send the mail to. In the following fields: <code>to</code>, <code>cc</code>
+and <code>bcc</code> you may give a single address or a list of addresses to use.
+All e-mail addresses can be plain e-mail addresses</p>
+<pre><code>name@mymailserver.com
+</code></pre>
+<p>or with formatted name (includes unicode support)</p>
+<pre><code>&quot;My Name&quot; &lt;name@mymailserver.com&gt;
+</code></pre>
+<div class="pilwrap" id="content">
+  <h4>
+    <a href="#content" name="content" class="pilcrow"></a>
+Content
+  </h4>
+</div>
+<p>The content of the mail consists of an subject line which should be not to long
+and the body. The body is given as <a href="http://alinex.github.io/develop/lang/markdown.html">Markdown</a>
+syntax and supports all possibilities from
+<a href="http://alinex.github.io/node-report/README.md.html#markup%20syntax">report</a>.
+This will be converted to a plain text and html version for sending so that the
+mail client can choose the format to display.</p>
+<p>Like you see above, you can use handlebar syntax to use some variables from the
+code. This is possible in subject and body. And you may specify a
+local to use for date formatting.</p>
+<p>You can also define different templates which can be referenced from within the
+job.</p>
+<p>The given context variables are used.</p>
+<p>Find more examples at <a href="http://alinex.github.io/node-validator/README.md.html#handlebars">validator</a>.</p>
+<div class="pilwrap" id="license">
+  <h2>
+    <a href="#license" name="license" class="pilcrow"></a>
+License
+  </h2>
+</div>
+<p>Copyright 2016 Alexander Schilling</p>
+<p>Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at</p>
+<blockquote>
+<p><a href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</a></p>
+</blockquote>
+<p>Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.</p>
+</div>
+  </div>
+</body>
+</html>

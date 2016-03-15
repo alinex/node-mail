@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>index.coffee</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" media="all" href="../doc-style.css" />
+  <script src="../doc-filelist.js"></script>
+  <script>
+    var relativeDir = "../";
+    var thisFile = "home/alex/github/node-mail/src/index.coffee";
+    var defaultSidebar = true;
+  </script>
+  <script src="../doc-script.js"></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0" /></head>
+<body>
+  <nav>
+<div class="logo"><a href="http://alinex.github.io"
+  onmouseover="logo.src='https://alinex.github.io/images/Alinex-200.png'"
+  onmouseout="logo.src='https://alinex.github.io/images/Alinex-black-200.png'">
+  <img name="logo" src="https://alinex.github.io/images/Alinex-black-200.png"
+    width="150" title="Alinex Universe Homepage" />
+  </a>
+  <img src="http://alinex.github.io/images/Alinex-200.png"
+    style="display:none" alt="preloading" />
+</div>
+<div class="links">
+  <a href="http://alinex.github.io/blog"
+    class="btn btn-primary"><span class="glyphicon-pencil"></span> Blog</a>
+  <a href="http://alinex.github.io/develop"
+    class="btn btn-primary"><span class="glyphicon-book"></span> Develop</a>
+  <a href="http://alinex.github.io/code.html"
+    class="btn btn-warning"><span class="glyphicon-cog"></span> Code</a>
+</div>
+</nav><div id="sidebar_wrapper">
+    <div id="sidebar_switch">
+      <span class="tree">Files</span>
+      <span class="headings">Headings</span>
+    </div>
+    <div id="tree"></div>
+    <div id="headings">
+
+      <div class="heading h1">
+        <a href="#api-to-real-function">Api to real function</a>
+      </div>
+
+      <div class="heading h2">
+        <a href="#node-modules">Node Modules</a>
+      </div>
+
+      <div class="heading h2">
+        <a href="#setup">Setup</a>
+      </div>
+
+      <div class="heading h2">
+        <a href="#send-email">Send Email</a>
+      </div>
+
+      <div class="heading h2">
+        <a href="#helper">Helper</a>
+      </div>
+
+      <div class="heading h3">
+        <a href="#add-body-to-mail-setup-from-report">Add body to mail setup from report</a>
+      </div>
+
+    </div>
+  </div>
+  <div id="sidebar-toggle"></div>
+  <div id="container" tabindex="0"><a id="fork" href="https://github.com/alinex/node-mail" title="Fork me on GitHub"></a>
+    <div class="background highlight"></div>
+<table cellpadding="0" cellspacing="0">
+  <tbody>
+    
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap" id="api-to-real-function">
+  <h1>
+    <a href="#api-to-real-function" name="api-to-real-function" class="pilcrow"></a>
+Api to real function
+  </h1>
+</div>
+
+        </td>
+        <td class="code highlight">
+          
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap" id="node-modules">
+  <h2>
+    <a href="#node-modules" name="node-modules" class="pilcrow"></a>
+Node Modules
+  </h2>
+</div>
+
+        </td>
+        <td class="code highlight">
+          
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-3" id="section-3"></a>
+</div>
+<p>include base modules</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="coffeescript">debug = <span class="hljs-built_in">require</span>(<span class="hljs-string">'debug'</span>)(<span class="hljs-string">'mail'</span>)
+chalk = <span class="hljs-built_in">require</span> <span class="hljs-string">'chalk'</span>
+util = <span class="hljs-built_in">require</span> <span class="hljs-string">'util'</span>
+nodemailer = <span class="hljs-built_in">require</span> <span class="hljs-string">'nodemailer'</span>
+inlineBase64 = <span class="hljs-built_in">require</span> <span class="hljs-string">'nodemailer-plugin-inline-base64'</span>
+moment = <span class="hljs-built_in">require</span> <span class="hljs-string">'moment'</span>
+fspath = <span class="hljs-built_in">require</span> <span class="hljs-string">'path'</span></pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-4" id="section-4"></a>
+</div>
+<p>include alinex modules</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="coffeescript">config = <span class="hljs-built_in">require</span> <span class="hljs-string">'alinex-config'</span>
+async = <span class="hljs-built_in">require</span> <span class="hljs-string">'alinex-async'</span>
+{object} = <span class="hljs-built_in">require</span> <span class="hljs-string">'alinex-util'</span>
+Report = <span class="hljs-built_in">require</span> <span class="hljs-string">'alinex-report'</span></pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-5" id="section-5"></a>
+</div>
+<p>internal helpers</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="coffeescript">schema = <span class="hljs-built_in">require</span> <span class="hljs-string">'./configSchema'</span></pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap" id="setup">
+  <h2>
+    <a href="#setup" name="setup" class="pilcrow"></a>
+Setup
+  </h2>
+</div>
+<p>set the modules config paths and validation schema</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="coffeescript">exports.setup = async.once <span class="hljs-keyword">this</span>, <span class="hljs-function"><span class="hljs-params">(cb)</span> -&gt;</span></pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-7" id="section-7"></a>
+</div>
+<p>set module search path</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="coffeescript">  config.register <span class="hljs-literal">false</span>, fspath.dirname __dirname</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-8" id="section-8"></a>
+</div>
+<p>add schema for module's configuration</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="coffeescript">  config.setSchema <span class="hljs-string">'/email'</span>, schema, cb</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap" id="send-email">
+  <h2>
+    <a href="#send-email" name="send-email" class="pilcrow"></a>
+Send Email
+  </h2>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="coffeescript">exports.send = <span class="hljs-function"><span class="hljs-params">(setup, context, cb)</span> -&gt;</span></pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-10" id="section-10"></a>
+</div>
+<p>configure email</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="coffeescript">  setup = object.clone setup</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-11" id="section-11"></a>
+</div>
+<p>use base settings</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="coffeescript">  <span class="hljs-keyword">while</span> setup.base
+    debug chalk.grey <span class="hljs-string">"loading base template <span class="hljs-subst">#{setup.base}</span>"</span>
+    base = config.get <span class="hljs-string">"/email/<span class="hljs-subst">#{setup.base}</span>"</span>
+    <span class="hljs-keyword">delete</span> setup.base
+    setup = object.extend {}, base, setup</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-12" id="section-12"></a>
+</div>
+<p>support handlebars</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="coffeescript">  <span class="hljs-keyword">if</span> setup.locale <span class="hljs-comment"># change locale</span>
+    oldLocale = moment.locale()
+    moment.locale setup.locale
+  setup.subject = setup.subject context <span class="hljs-keyword">if</span> <span class="hljs-keyword">typeof</span> setup.subject <span class="hljs-keyword">is</span> <span class="hljs-string">'function'</span>
+  addBody setup, context, <span class="hljs-function">-&gt;</span>
+    <span class="hljs-keyword">if</span> setup.locale <span class="hljs-comment"># change locale back</span>
+      moment.locale oldLocale</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-13" id="section-13"></a>
+</div>
+<p>send email</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="coffeescript">    mails = setup.to?.map (e) -&gt; e.replace <span class="hljs-regexp">/".*?" &lt;(.*?)&gt;/g</span>, <span class="hljs-string">'$1'</span>
+    debug chalk.grey <span class="hljs-string">"sending email to <span class="hljs-subst">#{mails?.join <span class="hljs-string">', '</span>}</span>..."</span></pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-14" id="section-14"></a>
+</div>
+<p>setup transporter</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="coffeescript">    transporter = nodemailer.createTransport setup.transport ? <span class="hljs-string">'direct:?name=hostname'</span>
+    transporter.use <span class="hljs-string">'compile'</span>, inlineBase64
+    debug chalk.grey <span class="hljs-string">"using <span class="hljs-subst">#{transporter.transporter.name}</span>"</span></pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-15" id="section-15"></a>
+</div>
+<p>try to send email</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="coffeescript">    transporter.sendMail setup, <span class="hljs-function"><span class="hljs-params">(err, info)</span> -&gt;</span>
+      <span class="hljs-keyword">if</span> err
+        <span class="hljs-keyword">if</span> err.errors
+          debug chalk.red e.message <span class="hljs-keyword">for</span> e <span class="hljs-keyword">in</span> err.errors
+        <span class="hljs-keyword">else</span>
+          debug chalk.red err.message
+        debug chalk.grey <span class="hljs-string">"send through "</span> + util.inspect setup.transport
+      <span class="hljs-keyword">if</span> info
+        debug <span class="hljs-string">"message send: "</span> + chalk.grey util.inspect(info).replace <span class="hljs-regexp">/\s+/</span>, <span class="hljs-string">''</span>
+        <span class="hljs-keyword">return</span> cb <span class="hljs-keyword">new</span> Error <span class="hljs-string">"Some messages were rejected: <span class="hljs-subst">#{info.response}</span>"</span> <span class="hljs-keyword">if</span> info.rejected?.length
+      cb err?.errors?[<span class="hljs-number">0</span>] ? err ? <span class="hljs-literal">null</span></pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap" id="helper">
+  <h2>
+    <a href="#helper" name="helper" class="pilcrow"></a>
+Helper
+  </h2>
+</div>
+
+        </td>
+        <td class="code highlight">
+          
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap" id="add-body-to-mail-setup-from-report">
+  <h3>
+    <a href="#add-body-to-mail-setup-from-report" name="add-body-to-mail-setup-from-report" class="pilcrow"></a>
+Add body to mail setup from report
+  </h3>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="coffeescript"><span class="hljs-function"><span class="hljs-title">addBody</span>= <span class="hljs-params">(setup, context, cb)</span> -&gt;</span>
+  <span class="hljs-keyword">return</span> cb() <span class="hljs-keyword">unless</span> setup.body
+  source = <span class="hljs-keyword">if</span> <span class="hljs-keyword">typeof</span> setup.body <span class="hljs-keyword">is</span> <span class="hljs-string">'function'</span> <span class="hljs-keyword">then</span> setup.body(context) <span class="hljs-keyword">else</span> setup.body
+  report = <span class="hljs-keyword">new</span> Report
+    <span class="hljs-attribute">source</span>: source
+  report.toHtml
+    <span class="hljs-attribute">inlineCss</span>: <span class="hljs-literal">true</span>
+    <span class="hljs-attribute">locale</span>: setup.locale
+  , <span class="hljs-function"><span class="hljs-params">(err, html)</span> -&gt;</span>
+    setup.text = report.toText()
+    setup.html = html
+    <span class="hljs-keyword">delete</span> setup.body
+    cb err</pre>
+        </td>
+      </tr>
+    
+  </tbody>
+</table>
+
+  </div>
+</body>
+</html>
