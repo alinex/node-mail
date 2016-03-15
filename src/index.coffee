@@ -28,7 +28,7 @@ exports.setup = async.once this, (cb) ->
   # set module search path
   config.register false, fspath.dirname __dirname
   # add schema for module's configuration
-  config.setSchema '/email', schema, cb
+  config.setSchema '/email', schema.templates, cb
 
 
 # Send Email

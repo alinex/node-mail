@@ -4,7 +4,7 @@
 
 # Email Action
 # -------------------------------------------------
-email =
+exports.email = email =
   title: "Email Action"
   description: "the setup for an individual email action"
   type: 'object'
@@ -75,7 +75,7 @@ email =
 # Complete Schema Definition
 # -------------------------------------------------
 
-module.exports =
+exports.templates =
   title: "Email Templates"
   description: "the possible templates used for sending emails"
   type: 'object'

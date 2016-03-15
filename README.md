@@ -65,6 +65,13 @@ mail.send
 The above setup is all you may need to send an email. All the missing information
 is taken from it's base. Which is like always defined as a configuration setting.
 
+If you want to validate email settings within you applications configuration, you
+may use the schema from this package:
+
+``` coffee
+emailSchema = require('alinex-mail/lib/configSchema').email
+```
+
 
 Configuration
 -------------------------------------------------
@@ -82,7 +89,7 @@ They will be defined under `/email`:
 
 # Default Email Templates
 # -------------------------------------------------
-This will extend/overwrite the allready existing setup within the code.
+# This will extend/overwrite the already existing setup within the code.
 default:
   # specify how to connect to the server
   transport: smtp://alexander.schilling%40mycompany.de:<PASSWORD>@mail.mycompany.de
