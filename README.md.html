@@ -137,6 +137,10 @@ Usage
 </code></pre>
 <p>The above setup is all you may need to send an email. All the missing information
 is taken from it's base. Which is like always defined as a configuration setting.</p>
+<p>If you want to validate email settings within you applications configuration, you
+may use the schema from this package:</p>
+<pre><code class="coffee">emailSchema = <span class="hljs-built_in">require</span>(<span class="hljs-string">'alinex-mail/lib/configSchema'</span>).email
+</code></pre>
 <div class="pilwrap" id="configuration">
   <h2>
     <a href="#configuration" name="configuration" class="pilcrow"></a>
@@ -157,7 +161,7 @@ Email Templates
 
 # Default Email Templates
 # -------------------------------------------------
-This will extend/overwrite the allready existing setup within the code.
+# This will extend/overwrite the already existing setup within the code.
 default:
   # specify how to connect to the server
   transport: smtp://alexander.schilling%40mycompany.de:&lt;PASSWORD&gt;@mail.mycompany.de
