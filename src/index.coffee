@@ -44,6 +44,7 @@ exports.send = (setup, context, cb) ->
     setup = object.extend {}, base, setup
   # support handlebars
   if setup.locale # change locale
+    console.log 'LOCALE', setup.locale
     oldLocale = moment.locale()
     moment.locale setup.locale
   setup.subject = setup.subject context if typeof setup.subject is 'function'
@@ -58,6 +59,10 @@ exports.send = (setup, context, cb) ->
     transporter.use 'compile', inlineBase64
     debug chalk.grey "using #{transporter.transporter.name}"
     # try to send email
+    console.log setup
+    return cb()
+
+
     transporter.sendMail setup, (err, info) ->
       if err
         if err.errors
