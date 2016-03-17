@@ -4,6 +4,13 @@ Version changes
 The following list gives a short overview about what is changed between
 individual versions:
 
+Version 1.0.1 (2016-03-17)
+-------------------------------------------------
+- Flag to not include attachements.
+- Remove test code.
+- Readded now missing packages.
+- Remove no longer used packages and upgrade moment.
+
 Version 1.0.0 (2016-03-16)
 -------------------------------------------------
 - Change config schema to be used from outside.
