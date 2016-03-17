@@ -70,6 +70,11 @@ exports.email = email =
       title: "Content"
       description: "the body content of the generated email"
       type: 'handlebars'
+    attachements:
+      title: "Attachements"
+      description: "should attachements be included"
+      type: 'boolean'
+      optional: true
 
 
 # Complete Schema Definition

@@ -50,6 +50,8 @@ exports.send = (setup, context, cb) ->
   addBody setup, context, ->
     if setup.locale # change locale back
       moment.locale oldLocale
+    # cleanup
+    delete setup.attachements if setup.attachements? is false
     # send email
     mails = setup.to?.map (e) -> e.replace /".*?" <(.*?)>/g, '$1'
     debug chalk.grey "sending email to #{mails?.join ', '}..."
