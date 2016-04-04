@@ -141,6 +141,9 @@ is taken from it's base. Which is like always defined as a configuration setting
 may use the schema from this package:</p>
 <pre><code class="coffee">emailSchema = <span class="hljs-built_in">require</span>(<span class="hljs-string">'alinex-mail/lib/configSchema'</span>).email
 </code></pre>
+<p>You may also resolve the email templates before sending it:</p>
+<pre><code class="coffee">setup = mail.resolve setup
+</code></pre>
 <div class="pilwrap" id="configuration">
   <h2>
     <a href="#configuration" name="configuration" class="pilcrow"></a>

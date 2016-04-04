@@ -53,6 +53,10 @@
       </div>
 
       <div class="heading h2">
+        <a href="#resolve-email-template">Resolve Email Template</a>
+      </div>
+
+      <div class="heading h2">
         <a href="#send-email">Send Email</a>
       </div>
 
@@ -195,6 +199,39 @@ Setup
     
       <tr>
         <td class="docs">
+          <div class="pilwrap" id="resolve-email-template">
+  <h2>
+    <a href="#resolve-email-template" name="resolve-email-template" class="pilcrow"></a>
+Resolve Email Template
+  </h2>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="coffeescript">exports.resolve = <span class="hljs-function"><span class="hljs-params">(setup)</span> -&gt;</span></pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-10" id="section-10"></a>
+</div>
+<p>use base settings</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="coffeescript">  <span class="hljs-keyword">while</span> setup.base
+    debug chalk.grey <span class="hljs-string">"loading base template <span class="hljs-subst">#{setup.base}</span>"</span>
+    base = config.get <span class="hljs-string">"/email/<span class="hljs-subst">#{setup.base}</span>"</span>
+    <span class="hljs-keyword">delete</span> setup.base
+    setup = object.extend {}, base, setup
+  setup</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
           <div class="pilwrap" id="send-email">
   <h2>
     <a href="#send-email" name="send-email" class="pilcrow"></a>
@@ -211,7 +248,7 @@ Send Email
       <tr>
         <td class="docs">
           <div class="pilwrap">
-  <a class="pilcrow" href="#section-10" id="section-10"></a>
+  <a class="pilcrow" href="#section-12" id="section-12"></a>
 </div>
 <p>configure email</p>
 
@@ -224,24 +261,20 @@ Send Email
       <tr>
         <td class="docs">
           <div class="pilwrap">
-  <a class="pilcrow" href="#section-11" id="section-11"></a>
+  <a class="pilcrow" href="#section-13" id="section-13"></a>
 </div>
 <p>use base settings</p>
 
         </td>
         <td class="code highlight">
-          <pre class="coffeescript">  <span class="hljs-keyword">while</span> setup.base
-    debug chalk.grey <span class="hljs-string">"loading base template <span class="hljs-subst">#{setup.base}</span>"</span>
-    base = config.get <span class="hljs-string">"/email/<span class="hljs-subst">#{setup.base}</span>"</span>
-    <span class="hljs-keyword">delete</span> setup.base
-    setup = object.extend {}, base, setup</pre>
+          <pre class="coffeescript">  setup = exports.resolve setup</pre>
         </td>
       </tr>
     
       <tr>
         <td class="docs">
           <div class="pilwrap">
-  <a class="pilcrow" href="#section-12" id="section-12"></a>
+  <a class="pilcrow" href="#section-14" id="section-14"></a>
 </div>
 <p>support handlebars</p>
 
@@ -260,7 +293,7 @@ Send Email
       <tr>
         <td class="docs">
           <div class="pilwrap">
-  <a class="pilcrow" href="#section-13" id="section-13"></a>
+  <a class="pilcrow" href="#section-15" id="section-15"></a>
 </div>
 <p>cleanup</p>
 
@@ -273,7 +306,7 @@ Send Email
       <tr>
         <td class="docs">
           <div class="pilwrap">
-  <a class="pilcrow" href="#section-14" id="section-14"></a>
+  <a class="pilcrow" href="#section-16" id="section-16"></a>
 </div>
 <p>send email</p>
 
@@ -287,7 +320,7 @@ Send Email
       <tr>
         <td class="docs">
           <div class="pilwrap">
-  <a class="pilcrow" href="#section-15" id="section-15"></a>
+  <a class="pilcrow" href="#section-17" id="section-17"></a>
 </div>
 <p>setup transporter</p>
 
@@ -302,7 +335,7 @@ Send Email
       <tr>
         <td class="docs">
           <div class="pilwrap">
-  <a class="pilcrow" href="#section-16" id="section-16"></a>
+  <a class="pilcrow" href="#section-18" id="section-18"></a>
 </div>
 <p>try to send email</p>
 
