@@ -31,17 +31,25 @@ exports.setup = async.once this, (cb) ->
   config.setSchema '/email', schema.templates, cb
 
 
-# Send Email
+# Resolve Email Template
 # -------------------------------------------------
-exports.send = (setup, context, cb) ->
-  # configure email
-  setup = object.clone setup
+exports.resolve = (setup) ->
   # use base settings
   while setup.base
     debug chalk.grey "loading base template #{setup.base}"
     base = config.get "/email/#{setup.base}"
     delete setup.base
     setup = object.extend {}, base, setup
+  setup
+
+
+# Send Email
+# -------------------------------------------------
+exports.send = (setup, context, cb) ->
+  # configure email
+  setup = object.clone setup
+  # use base settings
+  setup = exports.resolve setup
   # support handlebars
   if setup.locale # change locale
     oldLocale = moment.locale()

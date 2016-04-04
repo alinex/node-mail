@@ -72,6 +72,12 @@ may use the schema from this package:
 emailSchema = require('alinex-mail/lib/configSchema').email
 ```
 
+You may also resolve the email templates before sending it:
+
+``` coffee
+setup = mail.resolve setup
+```
+
 
 Configuration
 -------------------------------------------------
