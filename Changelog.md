@@ -4,6 +4,10 @@ Version changes
 The following list gives a short overview about what is changed between
 individual versions:
 
+Version 1.0.3 (2016-04-06)
+-------------------------------------------------
+- Upgraded report package.
+
 Version 1.0.2 (2016-04-04)
 -------------------------------------------------
 - Added validator dependency.
