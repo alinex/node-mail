@@ -7,10 +7,10 @@ Package: alinex-mail
 
 An easy to use module for sending mails.
 
-- support for handlebars
-- support for report
-- support for templates
 - fully configurable
+- configuration templates
+- using markdown with auto text/html creation
+- support for handlebars templates
 
 While sending mails it will also transform inline images in html into cid images
 attached to the mail to make it more standard conform.
