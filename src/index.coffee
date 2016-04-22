@@ -68,20 +68,29 @@ exports.send = (setup, context, cb) ->
       transporter.use 'compile', require 'nodemailer-plugin-inline-base64'
     debug chalk.grey "using #{transporter.transporter.name}"
     # try to send email
-    transporter.sendMail setup, (err, info) ->
-      if err
-        if err.errors
-          debug chalk.red e.message for e in err.errors
-        else
-          debug chalk.red err.message
-        debug chalk.grey "send through " + util.inspect setup.transport
-      if info
-        debug "message send: #{util.inspect(info.envelope).replace /\s+/, ''}" +
-          chalk.grey " messageId: #{info.messageId}"
-        debug "server response\n" + chalk.grey info.response
-        if info.rejected?.length
-          return cb new Error "Some messages were rejected: #{info.response}"
-      cb err?.errors?[0] ? err ? null
+    send transporter, setup, cb
+
+send = (transporter, setup, cb, count = 0) ->
+  transporter.sendMail setup, (err, info) ->
+    if err
+      if err.errors
+        debug chalk.red e.message for e in err.errors
+      else
+        debug chalk.red err.message
+      debug chalk.grey "send through " + util.inspect setup.transport
+    if info
+      debug "message send: #{util.inspect(info.envelope).replace /\s+/, ''}" +
+        chalk.grey " messageId: #{info.messageId}"
+      debug "server response\n" + chalk.grey info.response
+      if info.rejected?.length
+        return cb new Error "Some messages were rejected: #{info.response}"
+    # return if success
+    return cb null, info unless err
+    # retry on error
+    if count < setup.retry?.times ? 0
+      return send transporter, setup, cb, count + 1
+    # failed completely
+    cb err?.errors?[0] ? err ? null, info
 
 
 # Helper

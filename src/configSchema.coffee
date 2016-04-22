@@ -24,6 +24,27 @@ exports.email = email =
       ,
         type: 'object'
       ]
+    retry:
+      title: "Retry"
+      description: "the number of retries to take if sending failed"
+      type: 'object'
+      allowedKeys: true
+      mandatoryKeys: true
+      keys:
+        times:
+          title: "Number of Attempts"
+          description: "the number of maximal attempts to run successfully"
+          type: 'integer'
+          min: 0
+          default: 1
+        interval:
+          title: "Time to Wait"
+          description: "the time to wait before retrying a failed attempt"
+          type: 'interval'
+          unit: 'ms'
+          min: 0
+          default: 5000
+      default: {times: 1, interval: 5000}
     from:
       title: "From"
       description: "the address emails are send from"

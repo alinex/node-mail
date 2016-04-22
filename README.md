@@ -104,6 +104,10 @@ They will be defined under `/email`:
 default:
   # specify how to connect to the server
   transport: smtp://alexander.schilling%40mycompany.de:<PASSWORD>@mail.mycompany.de
+  # specify retries
+  retry:
+    times: 1 # makes 2 tries at max
+    interval: 5s
   # sender address
   from: alexander.schilling@mycompany.de
   replyTo: somebody@mycompany.de
