@@ -207,14 +207,16 @@ syntax and supports all possibilities from
 This will be converted to a plain text and html version for sending so that the
 mail client can choose the format to display.
 
+You may also give the 'text' and 'html' content as property itself. But keep in
+mind that within the base properties no markdown conversions are done. In the
+'body' it will.
+
 Like you see above, you can use handlebar syntax to use some variables from the
 code. This is possible in subject and body. And you may specify a
-local to use for date formatting.
+locale to use for date formatting.
 
 You can also define different templates which can be referenced from within the
 job.
-
-The given context variables are used.
 
 Find more examples at [validator](http://alinex.github.io/node-validator/README.md.html#handlebars).
 

@@ -94,6 +94,7 @@ addBody= (setup, context, cb) ->
 
 # ### do sending with retry
 send = (transporter, setup, cb, count = 0) ->
+  debug chalk.grey "try #{count + 1}"
   transporter.sendMail setup, (err, info) ->
     if err
       if err.errors

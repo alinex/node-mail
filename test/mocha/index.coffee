@@ -27,6 +27,9 @@ describe "Mailing", ->
       email:
         default:
           to: ['info@alinex.de']
+          retry:
+            times: 1
+            interval: 1000
 
   it "should resolve email objects", ->
     result = mail.resolve
@@ -40,6 +43,13 @@ describe "Mailing", ->
     , (err, info) ->
       expect(err).to.not.exist
       expect(info.envelope.to).to.deep.equal config.value.email.default.to
+      cb()
+
+  it "should get send error", (cb) ->
+    mail.send
+      base: 'default'
+    , (err) ->
+      expect(err).to.exist
       cb()
 
   it "should support all options", (cb) ->
@@ -82,6 +92,32 @@ describe "Mailing", ->
       body = info.response?.toString()
       expect(body).to.contain 'Hello Alex!'
       expect(body).to.contain 'Hello <b>Alex</b>!'
+      cb()
+
+  it "should support body (with markdown)", (cb) ->
+    mail.send
+      transport: stubTransport()
+      to: ['info@alinex.de']
+      body: "Hello **Alex**!"
+    , {name: 'Alex'}, (err, info) ->
+      expect(err).to.not.exist
+      expect(info.envelope.to).to.deep.equal config.value.email.default.to
+      body = info.response?.toString()
+      expect(body).to.contain 'Hello **Alex**!'
+      expect(body).to.contain '<strong>Alex</strong>!'
+      cb()
+
+  it "should support handlebars in body", (cb) ->
+    mail.send
+      transport: stubTransport()
+      to: ['info@alinex.de']
+      body: handlebars.compile "Hello **{{name}}**!"
+    , {name: 'Alex'}, (err, info) ->
+      expect(err).to.not.exist
+      expect(info.envelope.to).to.deep.equal config.value.email.default.to
+      body = info.response?.toString()
+      expect(body).to.contain 'Hello **Alex**!'
+      expect(body).to.contain '<strong>Alex</strong>!'
       cb()
 
   it "should transform inline images to cid", (cb) ->
