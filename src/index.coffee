@@ -54,6 +54,8 @@ exports.send = (setup, context, cb) ->
     oldLocale = moment.locale()
     moment.locale setup.locale
   setup.subject = setup.subject context if typeof setup.subject is 'function'
+  setup.text = setup.text context if typeof setup.text is 'function'
+  setup.html = setup.html context if typeof setup.html is 'function'
   addBody setup, context, ->
     if setup.locale # change locale back
       moment.locale oldLocale
@@ -70,6 +72,27 @@ exports.send = (setup, context, cb) ->
     # try to send email
     send transporter, setup, cb
 
+
+# Helper
+# -------------------------------------------------
+
+# ### Add body to mail setup from report
+addBody= (setup, context, cb) ->
+  return cb() unless setup.body
+  source = if typeof setup.body is 'function' then setup.body(context) else setup.body
+  Report ?= require 'alinex-report'
+  report = new Report
+    source: source
+  report.toHtml
+    inlineCss: true
+    locale: setup.locale
+  , (err, html) ->
+    setup.text = report.toText()
+    setup.html = html
+    delete setup.body
+    cb err
+
+# ### do sending with retry
 send = (transporter, setup, cb, count = 0) ->
   transporter.sendMail setup, (err, info) ->
     if err
@@ -91,23 +114,3 @@ send = (transporter, setup, cb, count = 0) ->
       return send transporter, setup, cb, count + 1
     # failed completely
     cb err?.errors?[0] ? err ? null, info
-
-
-# Helper
-# -------------------------------------------------
-
-# ### Add body to mail setup from report
-addBody= (setup, context, cb) ->
-  return cb() unless setup.body
-  source = if typeof setup.body is 'function' then setup.body(context) else setup.body
-  Report ?= require 'alinex-report'
-  report = new Report
-    source: source
-  report.toHtml
-    inlineCss: true
-    locale: setup.locale
-  , (err, html) ->
-    setup.text = report.toText()
-    setup.html = html
-    delete setup.body
-    cb err

@@ -45,6 +45,7 @@
     "alinex-builder": "^1.2.7",
     "alinex-validator": "^1.4.3",
     "chai": "^3.5.0",
+    "handlebars": "^4.0.5",
     "nodemailer-stub-transport": "^1.0.0"
   },
   "optionalDependencies": {},
