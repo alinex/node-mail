@@ -4,6 +4,16 @@ Version changes
 The following list gives a short overview about what is changed between
 individual versions:
 
+Version 1.1.0 (2016-04-22)
+-------------------------------------------------
+- Updated documentation.
+- Optimized debug for retry handling.
+- Fix support of handlebars in text and body.
+- Added configurable retry handling.
+- Allow calling without context and optimized debug output.
+- Add unit test for schema.
+- Upgraded config, util, moment, nodemailer, validator and chai.
+
 Version 1.0.3 (2016-04-06)
 -------------------------------------------------
 - Upgraded report package.
