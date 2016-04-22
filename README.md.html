@@ -91,10 +91,10 @@ Package: alinex-mail
 <a href="https://gemnasium.com/alinex/node-mail"><img src="https://gemnasium.com/alinex/node-mail.png" alt="Dependency Status"></a></p>
 <p>An easy to use module for sending mails.</p>
 <ul>
-<li>support for handlebars</li>
-<li>support for report</li>
-<li>support for templates</li>
 <li>fully configurable</li>
+<li>configuration templates</li>
+<li>using markdown with auto text/html creation</li>
+<li>support for handlebars templates</li>
 </ul>
 <p>While sending mails it will also transform inline images in html into cid images
 attached to the mail to make it more standard conform.</p>
@@ -134,9 +134,13 @@ Usage
 <pre><code class="coffee">mail.send
   <span class="hljs-attribute">base</span>: <span class="hljs-string">'default'</span>
   <span class="hljs-attribute">subject</span>: <span class="hljs-string">'Test'</span>
+, context, <span class="hljs-function"><span class="hljs-params">(err)</span> -&gt;</span>
+  <span class="hljs-comment"># handling of errors or success</span>
 </code></pre>
 <p>The above setup is all you may need to send an email. All the missing information
 is taken from it's base. Which is like always defined as a configuration setting.</p>
+<p>The context is optional and only used if the mail's body contains handlebars
+templates.</p>
 <p>If you want to validate email settings within you applications configuration, you
 may use the schema from this package:</p>
 <pre><code class="coffee">emailSchema = <span class="hljs-built_in">require</span>(<span class="hljs-string">'alinex-mail/lib/configSchema'</span>).email
@@ -168,6 +172,10 @@ Email Templates
 default:
   # specify how to connect to the server
   transport: smtp://alexander.schilling%40mycompany.de:&lt;PASSWORD&gt;@mail.mycompany.de
+  # specify retries
+  retry:
+    times: 1 # makes 2 tries at max
+    interval: 5s
   # sender address
   from: alexander.schilling@mycompany.de
   replyTo: somebody@mycompany.de
@@ -267,12 +275,14 @@ syntax and supports all possibilities from
 <a href="http://alinex.github.io/node-report/README.md.html#markup%20syntax">report</a>.
 This will be converted to a plain text and html version for sending so that the
 mail client can choose the format to display.</p>
+<p>You may also give the 'text' and 'html' content as property itself. But keep in
+mind that within the base properties no markdown conversions are done. In the
+'body' it will.</p>
 <p>Like you see above, you can use handlebar syntax to use some variables from the
 code. This is possible in subject and body. And you may specify a
-local to use for date formatting.</p>
+locale to use for date formatting.</p>
 <p>You can also define different templates which can be referenced from within the
 job.</p>
-<p>The given context variables are used.</p>
 <p>Find more examples at <a href="http://alinex.github.io/node-validator/README.md.html#handlebars">validator</a>.</p>
 <div class="pilwrap" id="license">
   <h2>

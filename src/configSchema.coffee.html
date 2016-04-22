@@ -107,6 +107,27 @@ Email Action
       ,
         <span class="hljs-attribute">type</span>: <span class="hljs-string">'object'</span>
       ]
+    <span class="hljs-attribute">retry</span>:
+      <span class="hljs-attribute">title</span>: <span class="hljs-string">"Retry"</span>
+      <span class="hljs-attribute">description</span>: <span class="hljs-string">"the number of retries to take if sending failed"</span>
+      <span class="hljs-attribute">type</span>: <span class="hljs-string">'object'</span>
+      <span class="hljs-attribute">allowedKeys</span>: <span class="hljs-literal">true</span>
+      <span class="hljs-attribute">mandatoryKeys</span>: <span class="hljs-literal">true</span>
+      <span class="hljs-attribute">keys</span>:
+        <span class="hljs-attribute">times</span>:
+          <span class="hljs-attribute">title</span>: <span class="hljs-string">"Number of Attempts"</span>
+          <span class="hljs-attribute">description</span>: <span class="hljs-string">"the number of maximal attempts to run successfully"</span>
+          <span class="hljs-attribute">type</span>: <span class="hljs-string">'integer'</span>
+          <span class="hljs-attribute">min</span>: <span class="hljs-number">0</span>
+          <span class="hljs-attribute">default</span>: <span class="hljs-number">1</span>
+        <span class="hljs-attribute">interval</span>:
+          <span class="hljs-attribute">title</span>: <span class="hljs-string">"Time to Wait"</span>
+          <span class="hljs-attribute">description</span>: <span class="hljs-string">"the time to wait before retrying a failed attempt"</span>
+          <span class="hljs-attribute">type</span>: <span class="hljs-string">'interval'</span>
+          <span class="hljs-attribute">unit</span>: <span class="hljs-string">'ms'</span>
+          <span class="hljs-attribute">min</span>: <span class="hljs-number">0</span>
+          <span class="hljs-attribute">default</span>: <span class="hljs-number">5000</span>
+      <span class="hljs-attribute">default</span>: {<span class="hljs-attribute">times</span>: <span class="hljs-number">1</span>, <span class="hljs-attribute">interval</span>: <span class="hljs-number">5000</span>}
     <span class="hljs-attribute">from</span>:
       <span class="hljs-attribute">title</span>: <span class="hljs-string">"From"</span>
       <span class="hljs-attribute">description</span>: <span class="hljs-string">"the address emails are send from"</span>
