@@ -7,16 +7,14 @@
 # include base modules
 debug = require('debug')('mail')
 chalk = require 'chalk'
-util = require 'util'
 nodemailer = require 'nodemailer'
-inlineBase64 = require 'nodemailer-plugin-inline-base64'
 moment = require 'moment'
 fspath = require 'path'
 # include alinex modules
 config = require 'alinex-config'
 async = require 'alinex-async'
-{object} = require 'alinex-util'
-Report = require 'alinex-report'
+util = require 'alinex-util'
+Report = null # load on demand
 # internal helpers
 schema = require './configSchema'
 
@@ -39,15 +37,13 @@ exports.resolve = (setup) ->
     debug chalk.grey "loading base template #{setup.base}"
     base = config.get "/email/#{setup.base}"
     delete setup.base
-    setup = object.extend {}, base, setup
+    setup = util.extend 'MODE CLONE', base, setup
   setup
 
 
 # Send Email
 # -------------------------------------------------
 exports.send = (setup, context, cb) ->
-  # configure email
-  setup = object.clone setup
   # use base settings
   setup = exports.resolve setup
   # support handlebars
@@ -65,7 +61,8 @@ exports.send = (setup, context, cb) ->
     debug chalk.grey "sending email to #{mails?.join ', '}..."
     # setup transporter
     transporter = nodemailer.createTransport setup.transport ? 'direct:?name=hostname'
-    transporter.use 'compile', inlineBase64
+    if ~setup.html.indexOf "src=\"data:"
+      transporter.use 'compile', require 'nodemailer-plugin-inline-base64'
     debug chalk.grey "using #{transporter.transporter.name}"
     # try to send email
     transporter.sendMail setup, (err, info) ->
@@ -88,6 +85,7 @@ exports.send = (setup, context, cb) ->
 addBody= (setup, context, cb) ->
   return cb() unless setup.body
   source = if typeof setup.body is 'function' then setup.body(context) else setup.body
+  Report ?= require 'alinex-report'
   report = new Report
     source: source
   report.toHtml
