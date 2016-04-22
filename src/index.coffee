@@ -44,6 +44,9 @@ exports.resolve = (setup) ->
 # Send Email
 # -------------------------------------------------
 exports.send = (setup, context, cb) ->
+  if typeof context is 'function'
+    cb = context
+    context = null
   # use base settings
   setup = exports.resolve setup
   # support handlebars
@@ -61,7 +64,7 @@ exports.send = (setup, context, cb) ->
     debug chalk.grey "sending email to #{mails?.join ', '}..."
     # setup transporter
     transporter = nodemailer.createTransport setup.transport ? 'direct:?name=hostname'
-    if ~setup.html.indexOf "src=\"data:"
+    if setup.html and ~setup.html.indexOf "src=\"data:"
       transporter.use 'compile', require 'nodemailer-plugin-inline-base64'
     debug chalk.grey "using #{transporter.transporter.name}"
     # try to send email
@@ -73,8 +76,11 @@ exports.send = (setup, context, cb) ->
           debug chalk.red err.message
         debug chalk.grey "send through " + util.inspect setup.transport
       if info
-        debug "message send: " + chalk.grey util.inspect(info).replace /\s+/, ''
-        return cb new Error "Some messages were rejected: #{info.response}" if info.rejected?.length
+        debug "message send: #{util.inspect(info.envelope).replace /\s+/, ''}" +
+          chalk.grey " messageId: #{info.messageId}"
+        debug "server response\n" + chalk.grey info.response
+        if info.rejected?.length
+          return cb new Error "Some messages were rejected: #{info.response}"
       cb err?.errors?[0] ? err ? null
 
 

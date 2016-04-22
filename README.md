@@ -60,10 +60,15 @@ And now you simply send your mails:
 mail.send
   base: 'default'
   subject: 'Test'
+, context, (err) ->
+  # handling of errors or success
 ```
 
 The above setup is all you may need to send an email. All the missing information
 is taken from it's base. Which is like always defined as a configuration setting.
+
+The context is optional and only used if the mail's body contains handlebars
+templates.
 
 If you want to validate email settings within you applications configuration, you
 may use the schema from this package:
