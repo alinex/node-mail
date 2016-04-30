@@ -4,6 +4,11 @@ Version changes
 The following list gives a short overview about what is changed between
 individual versions:
 
+Version 1.1.1 (2016-04-30)
+-------------------------------------------------
+- Remove dependency for async and upgraded builder.
+- Add coverals after ci.
+
 Version 1.1.0 (2016-04-22)
 -------------------------------------------------
 - Updated documentation.
