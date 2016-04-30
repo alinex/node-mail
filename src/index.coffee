@@ -12,7 +12,6 @@ moment = require 'moment'
 fspath = require 'path'
 # include alinex modules
 config = require 'alinex-config'
-async = require 'alinex-async'
 util = require 'alinex-util'
 Report = null # load on demand
 # internal helpers
@@ -22,7 +21,7 @@ schema = require './configSchema'
 # Setup
 # -------------------------------------------------
 # set the modules config paths and validation schema
-exports.setup = async.once this, (cb) ->
+exports.setup = util.function.once this, (cb) ->
   # set module search path
   config.register false, fspath.dirname __dirname
   # add schema for module's configuration
