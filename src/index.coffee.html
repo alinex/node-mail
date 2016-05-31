@@ -7,7 +7,7 @@
   <script src="../doc-filelist.js"></script>
   <script>
     var relativeDir = "../";
-    var thisFile = "home/alex/github/node-mail/src/index.coffee";
+    var thisFile = "src/index.coffee";
     var defaultSidebar = true;
   </script>
   <script src="../doc-script.js"></script>
@@ -138,7 +138,6 @@ fspath = <span class="hljs-built_in">require</span> <span class="hljs-string">'p
         </td>
         <td class="code highlight">
           <pre class="coffeescript">config = <span class="hljs-built_in">require</span> <span class="hljs-string">'alinex-config'</span>
-async = <span class="hljs-built_in">require</span> <span class="hljs-string">'alinex-async'</span>
 util = <span class="hljs-built_in">require</span> <span class="hljs-string">'alinex-util'</span>
 Report = <span class="hljs-literal">null</span> <span class="hljs-comment"># load on demand</span></pre>
         </td>
@@ -169,7 +168,7 @@ Setup
 
         </td>
         <td class="code highlight">
-          <pre class="coffeescript">exports.setup = async.once <span class="hljs-keyword">this</span>, <span class="hljs-function"><span class="hljs-params">(cb)</span> -&gt;</span></pre>
+          <pre class="coffeescript">exports.setup = util.function.once <span class="hljs-keyword">this</span>, <span class="hljs-function"><span class="hljs-params">(cb)</span> -&gt;</span></pre>
         </td>
       </tr>
     
@@ -371,10 +370,10 @@ Add body to mail setup from report
   source = <span class="hljs-keyword">if</span> <span class="hljs-keyword">typeof</span> setup.body <span class="hljs-keyword">is</span> <span class="hljs-string">'function'</span> <span class="hljs-keyword">then</span> setup.body(context) <span class="hljs-keyword">else</span> setup.body
   Report ?= <span class="hljs-built_in">require</span> <span class="hljs-string">'alinex-report'</span>
   report = <span class="hljs-keyword">new</span> Report
-    <span class="hljs-attribute">source</span>: source
+    source: source
   report.toHtml
-    <span class="hljs-attribute">inlineCss</span>: <span class="hljs-literal">true</span>
-    <span class="hljs-attribute">locale</span>: setup.locale
+    inlineCss: <span class="hljs-literal">true</span>
+    locale: setup.locale
   , <span class="hljs-function"><span class="hljs-params">(err, html)</span> -&gt;</span>
     setup.text = report.toText()
     setup.html = html
