@@ -94,9 +94,9 @@ exports.email = email =
     attachements:
       title: "Attachements"
       description: "should attachements be included"
-      type: 'object'
+      type: 'array'
       allowedKeys: true
-      keys:
+      entries:
         filename:
           title: "Reported Filename"
           description: "the filename to be reported as the name of the attached file
