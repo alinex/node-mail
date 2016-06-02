@@ -4,6 +4,13 @@ Version changes
 The following list gives a short overview about what is changed between
 individual versions:
 
+Version 1.2.0 (2016-06-02)
+-------------------------------------------------
+Changed handling of attachements.
+
+- Update config, report, util, validator and builder packages.
+- Don't test node v6 because of subpackage problems.
+
 Version 1.1.1 (2016-04-30)
 -------------------------------------------------
 - Remove dependency for async and upgraded builder.
