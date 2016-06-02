@@ -1,1 +1,1 @@
-var tree={"files":["Changelog.md","README.md","coffeelint.json","package.json"],"dirs":{"coverage":{"files":["coverage.json"],"dirs":{"lcov-report":{"files":["base.css","index.html","prettify.css","prettify.js","sorter.js"],"dirs":{"src":{"files":["configSchema.coffee.html","index.coffee.html","index.html"]}}}}},"src":{"files":["configSchema.coffee","index.coffee"]}}};
+var tree={"files":["Changelog.md","README.md","coffeelint.json","package.json"],"dirs":{"src":{"files":["configSchema.coffee","index.coffee"]}}};

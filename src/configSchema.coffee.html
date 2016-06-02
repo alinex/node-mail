@@ -177,8 +177,47 @@ Email Action
     attachements:
       title: <span class="hljs-string">"Attachements"</span>
       description: <span class="hljs-string">"should attachements be included"</span>
-      type: <span class="hljs-string">'boolean'</span>
-      optional: <span class="hljs-literal">true</span></pre>
+      type: <span class="hljs-string">'object'</span>
+      allowedKeys: <span class="hljs-literal">true</span>
+      keys:
+        filename:
+          title: <span class="hljs-string">"Reported Filename"</span>
+          description: <span class="hljs-string">"the filename to be reported as the name of the attached file
+          (set this value as false to disable, default: created automatically)"</span>
+          type: <span class="hljs-string">'string'</span>
+          optional: <span class="hljs-literal">true</span>
+        content:
+          title: <span class="hljs-string">"Content"</span>
+          description: <span class="hljs-string">"the content of the attached file"</span>
+          type: <span class="hljs-string">'string'</span>
+          optional: <span class="hljs-literal">true</span>
+        path:
+          title: <span class="hljs-string">"Include File"</span>
+          description: <span class="hljs-string">"the path to a file or an URL if you want to stream the
+          file instead of including it"</span>
+          type: <span class="hljs-string">'string'</span>
+          optional: <span class="hljs-literal">true</span>
+        contentType:
+          title: <span class="hljs-string">"Content Type"</span>
+          description: <span class="hljs-string">"the optional content type for the attachment (autodetected)"</span>
+          type: <span class="hljs-string">'string'</span>
+          optional: <span class="hljs-literal">true</span>
+        contentDisposition:
+          title: <span class="hljs-string">"Disposition"</span>
+          description: <span class="hljs-string">"the optional content disposition type for the attachment
+          (default: attachment)"</span>
+          type: <span class="hljs-string">'string'</span>
+          optional: <span class="hljs-literal">true</span>
+        cid:
+          title: <span class="hljs-string">"Content ID"</span>
+          description: <span class="hljs-string">"the optional content id for using inline images in HTML message source"</span>
+          type: <span class="hljs-string">'string'</span>
+          optional: <span class="hljs-literal">true</span>
+        encoding:
+          title: <span class="hljs-string">"Encoding"</span>
+          description: <span class="hljs-string">"the content encoding like: base64, hex, binary etc."</span>
+          type: <span class="hljs-string">'string'</span>
+          optional: <span class="hljs-literal">true</span></pre>
         </td>
       </tr>
     
