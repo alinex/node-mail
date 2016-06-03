@@ -5,7 +5,8 @@
 # -------------------------------------------------
 
 # include base modules
-debug = require('debug')('mail')
+debug = require('debug') 'mail'
+debugData = require('debug') 'mail:data'
 chalk = require 'chalk'
 nodemailer = require 'nodemailer'
 moment = require 'moment'
@@ -102,6 +103,8 @@ send = (transporter, setup, cb, count = 0) ->
     if info
       debug "message send: #{util.inspect(info.envelope).replace /\s+/, ''}" +
         chalk.grey " messageId: #{info.messageId}"
+      for key, value of info
+        debugData chalk.grey "#{key}: #{util.inspect value}"
       debug "server response\n" + chalk.grey info.response
       if info.rejected?.length
         return cb new Error "Some messages were rejected: #{info.response}"
