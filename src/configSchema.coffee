@@ -93,48 +93,46 @@ exports.email = email =
       type: 'handlebars'
     attachements:
       title: "Attachements"
-      description: "should attachements be included"
+      description: "the attachements to be included"
       type: 'array'
       allowedKeys: true
       entries:
-        filename:
-          title: "Reported Filename"
-          description: "the filename to be reported as the name of the attached file
-          (set this value as false to disable, default: created automatically)"
-          type: 'string'
-          optional: true
-        content:
-          title: "Content"
-          description: "the content of the attached file"
-          type: 'string'
-          optional: true
-        path:
-          title: "Include File"
-          description: "the path to a file or an URL if you want to stream the
-          file instead of including it"
-          type: 'string'
-          optional: true
-        contentType:
-          title: "Content Type"
-          description: "the optional content type for the attachment (autodetected)"
-          type: 'string'
-          optional: true
-        contentDisposition:
-          title: "Disposition"
-          description: "the optional content disposition type for the attachment
-          (default: attachment)"
-          type: 'string'
-          optional: true
-        cid:
-          title: "Content ID"
-          description: "the optional content id for using inline images in HTML message source"
-          type: 'string'
-          optional: true
-        encoding:
-          title: "Encoding"
-          description: "the content encoding like: base64, hex, binary etc."
-          type: 'string'
-          optional: true
+        title: "Attachement"
+        description: "the attachement to be included"
+        type: 'object'
+        allowedKeys: true
+        keys:
+          filename:
+            title: "Reported Filename"
+            description: "the filename to be reported as the name of the attached file
+            (set this value as false to disable, default: created automatically)"
+            type: 'string'
+          content:
+            title: "Content"
+            description: "the content of the attached file"
+            type: 'string'
+          path:
+            title: "Include File"
+            description: "the path to a file or an URL if you want to stream the
+            file instead of including it"
+            type: 'string'
+          contentType:
+            title: "Content Type"
+            description: "the optional content type for the attachment (autodetected)"
+            type: 'string'
+          contentDisposition:
+            title: "Disposition"
+            description: "the optional content disposition type for the attachment
+            (default: attachment)"
+            type: 'string'
+          cid:
+            title: "Content ID"
+            description: "the optional content id for using inline images in HTML message source"
+            type: 'string'
+          encoding:
+            title: "Encoding"
+            description: "the content encoding like: base64, hex, binary etc."
+            type: 'string'
 
 
 # Complete Schema Definition
