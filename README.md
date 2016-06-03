@@ -220,6 +220,23 @@ job.
 
 Find more examples at [validator](http://alinex.github.io/node-validator/README.md.html#handlebars).
 
+#### Attachments
+
+The key `attachments` is used to add a list of files attached to the email and
+consists of the following properties:
+
+- `path` path to a file or an URL to include
+- `filename` filename to be reported as the name of the attached file
+- `content` String, Buffer or a Stream contents for the attachment
+- `contentType` optional content type for the attachment, if not set will be
+  derived from the filename property
+- `contentDisposition` optional content disposition type for the attachment,
+  defaults to ‘attachment’
+- `cid` optional content id for using inline images in HTML message source
+- `encoding` If set and content is string, then encodes the content to a Buffer
+  using the specified encoding. Example values: base64, hex, binary etc.
+- `headers` custom headers for the attachment node
+
 
 
 License
