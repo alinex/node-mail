@@ -94,7 +94,7 @@ describe "Mailing", ->
       cb()
 
   it "should support body (with markdown)", (cb) ->
-    @timeout 5000
+    @timeout 15000
     mail.send
       transport: stubTransport()
       to: ['info@alinex.de']
