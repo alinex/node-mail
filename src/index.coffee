@@ -103,7 +103,8 @@ send = (transporter, setup, cb, count = 0) ->
     if info
       debug "message send: #{util.inspect(info.envelope).replace /\s+/, ''}" +
         chalk.grey " messageId: #{info.messageId}"
-      for key, value of info
+      for key, value of setup
+        continue if key in ['retry']
         debugData chalk.grey "#{key}: #{util.inspect value}"
       debug "server response\n" + chalk.grey info.response
       if info.rejected?.length

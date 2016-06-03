@@ -91,14 +91,14 @@ exports.email = email =
       title: "Content"
       description: "the body content of the generated email"
       type: 'handlebars'
-    attachements:
-      title: "Attachements"
-      description: "the attachements to be included"
+    attachments:
+      title: "Attachments"
+      description: "the attachments to be included"
       type: 'array'
       allowedKeys: true
       entries:
-        title: "Attachement"
-        description: "the attachement to be included"
+        title: "Attachment"
+        description: "the attachment to be included"
         type: 'object'
         allowedKeys: true
         keys:
