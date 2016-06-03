@@ -60,7 +60,6 @@ describe "Mailing", ->
       subject: "Hello {{name}}!"
       text: "Hello {{name}}!"
       html: "Hello {{name}}!"
-      attachements: false
     , (err, info) ->
       expect(err).to.not.exist
       expect(info.envelope.to).to.deep.equal config.value.email.default.to
@@ -95,6 +94,7 @@ describe "Mailing", ->
       cb()
 
   it "should support body (with markdown)", (cb) ->
+    @timeout 5000
     mail.send
       transport: stubTransport()
       to: ['info@alinex.de']
@@ -108,6 +108,7 @@ describe "Mailing", ->
       cb()
 
   it "should support handlebars in body", (cb) ->
+    @timeout 5000
     mail.send
       transport: stubTransport()
       to: ['info@alinex.de']
