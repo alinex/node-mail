@@ -4,6 +4,11 @@ Version changes
 The following list gives a short overview about what is changed between
 individual versions:
 
+Version 1.2.1 (2016-06-03)
+-------------------------------------------------
+- Make test run through npm verbose.
+- Change attachements format from object to array.
+
 Version 1.2.0 (2016-06-02)
 -------------------------------------------------
 Changed handling of attachements.
