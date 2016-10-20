@@ -15,7 +15,7 @@ svg = """
 fill="#FF0" stroke="#FC0" stroke-width="2"/>
 </svg>"""
 
-describe.only "SVG", ->
+describe.skip "SVG", ->
 
   it "should convert to png", (cb) ->
     @timeout 20000
