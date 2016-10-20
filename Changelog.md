@@ -4,6 +4,15 @@ Version changes
 The following list gives a short overview about what is changed between
 individual versions:
 
+Version 1.3.0 (2016-10-20)
+-------------------------------------------------
+- Remove test for svg conversion because not active.
+- Update doc and debugging.
+- Test to convert svg to png.
+- Rename links to Alinex Namespace.
+- Add copyright sign.
+- Document the use of attachments.
+
 Version 1.2.4 (2016-06-03)
 -------------------------------------------------
 - Fixed spelling of attachments config.
