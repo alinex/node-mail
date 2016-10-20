@@ -1,9 +1,18 @@
-# Configuration Schema
-# =================================================
+###
+Configuration
+===================================================
+The configuration consists of two parts:
+- Email Template
+- Collection of Templates
+###
 
 
-# Email Action
-# -------------------------------------------------
+###
+Email Template
+------------------------------------------------------
+{@schema #email}
+###
+
 exports.email = email =
   title: "Email Action"
   description: "the setup for an individual email action"
@@ -12,16 +21,21 @@ exports.email = email =
   keys:
     base:
       title: "Base Template"
+      description: "the template used as basis for this one"
       type: 'string'
-      description: "the template used as base for this"
       list: '<<<context:///email>>>'
     transport:
       title: "Service Connection"
       description: "the service connection to send mails through"
       type: 'or'
       or: [
+        title: "Transport URI"
+        description: "the transport method as URI string through which the mail
+        will be send like `<protocol>://<user>:<password>@<server>:<port>`"
         type: 'string'
       ,
+        title: "Transport Object"
+        description: "the mail transport settings through which the mail will be send"
         type: 'object'
       ]
     retry:
@@ -135,11 +149,77 @@ exports.email = email =
             type: 'string'
 
 
-# Complete Schema Definition
-# -------------------------------------------------
+###
+Collection of Templates
+------------------------------------------------------
+{@schema #templates}
+###
 
 exports.templates =
   title: "Email Templates"
   description: "the possible templates used for sending emails"
   type: 'object'
   entries: [email]
+
+
+###
+Addressing
+--------------------------------------------------------
+First you can define the sender address using:
+
+``` yaml
+from: <string> # the address used as sender(often the same as used in transport)
+replyTo: <string> # address which should be used for replys
+```
+
+And you give the addresses to send the mail to. In the following fields: `to`, `cc`
+and `bcc` you may give a single address or a list of addresses to use.
+All e-mail addresses can be plain e-mail addresses
+
+    name@mymailserver.com
+
+or with formatted name (includes unicode support)
+
+    "My Name" <name@mymailserver.com>
+
+
+Content
+--------------------------------------------------------
+The content of the mail consists of an subject line which should be not to long
+and the body. The body is given as [Markdown](http://alinex.github.io/develop/lang/markdown.html)
+syntax and supports all possibilities from
+[report](http://alinex.github.io/node-report/README.md.html#markup%20syntax).
+This will be converted to a plain text and html version for sending so that the
+mail client can choose the format to display.
+
+You may also give the 'text' and 'html' content as property itself. But keep in
+mind that within the base properties no markdown conversions are done. In the
+'body' it will.
+
+Like you see above, you can use handlebar syntax to use some variables from the
+code. This is possible in subject and body. And you may specify a
+locale to use for date formatting.
+
+You can also define different templates which can be referenced from within the
+job.
+
+Find more examples at [validator](http://alinex.github.io/node-validator/README.md.html#handlebars).
+
+
+Attachments
+--------------------------------------------------
+The key `attachments` is used to add a list of files attached to the email and
+consists of the following properties:
+
+- `path` path to a file or an URL to include
+- `filename` filename to be reported as the name of the attached file
+- `content` String, Buffer or a Stream contents for the attachment
+- `contentType` optional content type for the attachment, if not set will be
+  derived from the filename property
+- `contentDisposition` optional content disposition type for the attachment,
+  defaults to ‘attachment’
+- `cid` optional content id for using inline images in HTML message source
+- `encoding` If set and content is string, then encodes the content to a Buffer
+  using the specified encoding. Example values: base64, hex, binary etc.
+- `headers` custom headers for the attachment node
+###
