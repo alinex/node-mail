@@ -1,94 +1,106 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>README.md</title>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <link rel="stylesheet" media="all" href="doc-style.css" />
-  <script src="doc-filelist.js"></script>
-  <script>
-    var relativeDir = "";
-    var thisFile = "README.md";
-    var defaultSidebar = true;
-  </script>
-  <script src="doc-script.js"></script>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alinex Mail: Readme</title>
+    <meta name="HandheldFriendly" content="true" />
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/highlight.js/8.5.0/styles/solarized_light.min.css" /><style type="text/css">#topnav{text-align:center;background:#333;padding-bottom:20px;position:fixed;margin-top:0;width:100%;bottom:0;top:51px;}#topnav .navbar-nav{margin:0;margin-top:8px;display:-webkit-inline-box;display:-moz-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-box;display:inline-flex}#topnav .sidebar-to-top .btn{text-align:left}#topnav .sidebar-to-top li.level2>a{margin-left:20px}#topnav .sidebar-to-top li.level3>a{margin-left:40px}#topnav .sidebar-to-top li.level4>a{margin-left:60px}#topnav .sidebar-to-top li.level5>a{margin-left:80px}#topnav .sidebar-to-top li.level6>a{margin-left:100px}.navbar-fixed-top .navbar-collapse{max-height:100%}.navbar{min-width:300px}.nav>li{padding:2px 12px}.navbar-inverse .nav>li>a{color:#222;font-weight:bold;padding-top:6px;padding-bottom:6px;}.navbar-inverse .nav>li>a:focus,.navbar-inverse .nav>li>a:hover{background:#73aad8;background:#4b91cd -webkit-linear-gradient(270deg, #73aad8, #4b91cd) repeat-x;background:#4b91cd -moz-linear-gradient(270deg, #73aad8, #4b91cd) repeat-x;background:#4b91cd -o-linear-gradient(270deg, #73aad8, #4b91cd) repeat-x;background:#4b91cd -ms-linear-gradient(270deg, #73aad8, #4b91cd) repeat-x;background:#4b91cd linear-gradient(180deg, #73aad8, #4b91cd) repeat-x}.navbar-inverse .nav>li>a.btn-warning:focus,.navbar-inverse .nav>li>a.btn-warning:hover{background:#ec9721;background:#c97c11 -webkit-linear-gradient(270deg, #ec9721, #c97c11) repeat-x;background:#c97c11 -moz-linear-gradient(270deg, #ec9721, #c97c11) repeat-x;background:#c97c11 -o-linear-gradient(270deg, #ec9721, #c97c11) repeat-x;background:#c97c11 -ms-linear-gradient(270deg, #ec9721, #c97c11) repeat-x;background:#c97c11 linear-gradient(180deg, #ec9721, #c97c11) repeat-x}.navbar-spacer{height:51px}.btn-warning:active,.btn-primary:active{-webkit-transform:scale(.92);-moz-transform:scale(.92);-o-transform:scale(.92);-ms-transform:scale(.92);transform:scale(.92)}.btn-warning{background:#f2b560;background:#ee9f31 -webkit-linear-gradient(270deg, #f2b560, #ee9f31) repeat-x;background:#ee9f31 -moz-linear-gradient(270deg, #f2b560, #ee9f31) repeat-x;background:#ee9f31 -o-linear-gradient(270deg, #f2b560, #ee9f31) repeat-x;background:#ee9f31 -ms-linear-gradient(270deg, #f2b560, #ee9f31) repeat-x;background:#ee9f31 linear-gradient(180deg, #f2b560, #ee9f31) repeat-x}.btn-primary{background:#3d88c9;background:#2e6ea5 -webkit-linear-gradient(270deg, #3d88c9, #2e6ea5) repeat-x;background:#2e6ea5 -moz-linear-gradient(270deg, #3d88c9, #2e6ea5) repeat-x;background:#2e6ea5 -o-linear-gradient(270deg, #3d88c9, #2e6ea5) repeat-x;background:#2e6ea5 -ms-linear-gradient(270deg, #3d88c9, #2e6ea5) repeat-x;background:#2e6ea5 linear-gradient(180deg, #3d88c9, #2e6ea5) repeat-x}.sidebar .nav{display:none;list-style:disc;padding-left:25px;}.sidebar .nav>li{display:list-item;}.sidebar .nav>li>a{color:#222;}.sidebar .nav>li>a:active{-webkit-box-shadow:0 2px 10px 2px rgba(0,0,0,0.25);box-shadow:0 2px 10px 2px rgba(0,0,0,0.25)}.sidebar .nav>li>a:hover{background:#3d88c9;background:#2e6ea5 -webkit-linear-gradient(270deg, #3d88c9, #2e6ea5) repeat-x;background:#2e6ea5 -moz-linear-gradient(270deg, #3d88c9, #2e6ea5) repeat-x;background:#2e6ea5 -o-linear-gradient(270deg, #3d88c9, #2e6ea5) repeat-x;background:#2e6ea5 -ms-linear-gradient(270deg, #3d88c9, #2e6ea5) repeat-x;background:#2e6ea5 linear-gradient(180deg, #3d88c9, #2e6ea5) repeat-x;color:#fff}.sidebar .nav>li.header,.sidebar .nav>li.active{display:none}.sidebar .nav>li.active>a{background:#73aad8;background:#4b91cd -webkit-linear-gradient(270deg, #73aad8, #4b91cd) repeat-x;background:#4b91cd -moz-linear-gradient(270deg, #73aad8, #4b91cd) repeat-x;background:#4b91cd -o-linear-gradient(270deg, #73aad8, #4b91cd) repeat-x;background:#4b91cd -ms-linear-gradient(270deg, #73aad8, #4b91cd) repeat-x;background:#4b91cd linear-gradient(180deg, #73aad8, #4b91cd) repeat-x;}.sidebar .nav>li.active>a:hover{background:#3d88c9;background:#2e6ea5 -webkit-linear-gradient(270deg, #3d88c9, #2e6ea5) repeat-x;background:#2e6ea5 -moz-linear-gradient(270deg, #3d88c9, #2e6ea5) repeat-x;background:#2e6ea5 -o-linear-gradient(270deg, #3d88c9, #2e6ea5) repeat-x;background:#2e6ea5 -ms-linear-gradient(270deg, #3d88c9, #2e6ea5) repeat-x;background:#2e6ea5 linear-gradient(180deg, #3d88c9, #2e6ea5) repeat-x;color:#fff}.sidebar .nav>li.header>a{font-weight:bold;background:#f2b560;background:#ee9f31 -webkit-linear-gradient(270deg, #f2b560, #ee9f31) repeat-x;background:#ee9f31 -moz-linear-gradient(270deg, #f2b560, #ee9f31) repeat-x;background:#ee9f31 -o-linear-gradient(270deg, #f2b560, #ee9f31) repeat-x;background:#ee9f31 -ms-linear-gradient(270deg, #f2b560, #ee9f31) repeat-x;background:#ee9f31 linear-gradient(180deg, #f2b560, #ee9f31) repeat-x;}.sidebar .nav>li.header>a:hover{background:#ec9721;background:#c97c11 -webkit-linear-gradient(270deg, #ec9721, #c97c11) repeat-x;background:#c97c11 -moz-linear-gradient(270deg, #ec9721, #c97c11) repeat-x;background:#c97c11 -o-linear-gradient(270deg, #ec9721, #c97c11) repeat-x;background:#c97c11 -ms-linear-gradient(270deg, #ec9721, #c97c11) repeat-x;background:#c97c11 linear-gradient(180deg, #ec9721, #c97c11) repeat-x;color:#fff}.sidebar .nav>li.level2>a{padding-left:30px}.sidebar .nav>li.level3>a{padding-left:50px}.sidebar .nav>li.level4>a{padding-left:70px}.sidebar .nav>li.level5>a,.sidebar .nav>li.level6>a{padding-left:90px}.navbar-inverse .navbar-toggle{background-color:#444;}.navbar-inverse .navbar-toggle:hover{background-color:#666}@media (min-width:768px){#topnav{position:inherit;background:#222;padding-bottom:0}#topnav .nav>li{padding:0 4px}#topnav .sidebar-to-top{display:none}.navbar-right{margin-right:0}.navbar-nav >li>a{padding:6px 10px}.sidebar{overflow:auto;position:fixed;top:51px;left:0;bottom:0;background:#ddd;padding:0;}.sidebar h1,.sidebar h2{display:none}.sidebar .nav{display:block;list-style:none;padding-left:0;}.sidebar .nav>li{padding:0;}.sidebar .nav>li.header,.sidebar .nav>li.active{display:block;}.sidebar .nav>li.header.level2>a:before,.sidebar .nav>li.active.level2>a:before,.sidebar .nav>li.header.level3>a:before,.sidebar .nav>li.active.level3>a:before,.sidebar .nav>li.header.level4>a:before,.sidebar .nav>li.active.level4>a:before,.sidebar .nav>li.header.level5>a:before,.sidebar .nav>li.active.level5>a:before,.sidebar .nav>li.header.level6>a:before,.sidebar .nav>li.active.level6>a:before{content:"•"}.sidebar .nav>li>a{padding-top:8px;padding-bottom:8px}.sidebar .nav>li.level2>a:before,.sidebar .nav>li.level3>a:before,.sidebar .nav>li.level4>a:before,.sidebar .nav>li.level5>a:before,.sidebar .nav>li.level6>a:before{content:"◦";font-size:150%;line-height:10%;font-weight:bold;padding-right:5px;display:block;float:left;margin-top:8px;margin-left:-15px;color:#666}}img.preload{display:none}body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";font-size:16px;line-height:1.2;-ms-word-break:break-all;word-break:break-all;word-break:break-word;-webkit-hyphens:auto;-moz-hyphens:auto;-ms-hyphens:auto;hyphens:auto;-webkit-hyphenate-before:2;-webkit-hyphenate-after:3;hyphenate-lines:3;min-width:300px}h1,h2,h3,h4,h5,h6{font-weight:bold;}h1:before,h2:before,h3:before,h4:before,h5:before,h6:before{display:block;content:" ";margin-top:-66px;height:66px;visibility:hidden}h1,h2,h3{clear:both}h1{border-bottom:3px solid #222;padding-bottom:5px}h2{border-bottom:2px dotted #222;padding-bottom:3px}h3{border-bottom:2px dotted #aaa;padding-bottom:2px}h4{border-bottom:1px dotted #aaa}dt{font-weight:bold;margin-top:8px}dd{margin-left:20px}blockquote{border:1px solid #eee;border-radius:3px;border-left:5px solid #337ab7;padding:5px 15px;margin:10px 0;}blockquote ul li p{margin-bottom:0}svg,img{max-width:100%}table{border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all;margin-bottom:10px;}table th,table td{padding:6px 13px;border:1px solid #ddd}table th{background-color:rgba(0,0,0,0.04);font-weight:bold;border-bottom:3px solid #999}table tr{background-color:#fff;border-top:1px solid #ccc;}table tr:nth-child(2n){background-color:rgba(0,0,0,0.04)}img{vertical-align:middle}.emoji{height:1em}abbr,acronym{border-bottom:dotted 1px}a code{color:#337ab7}code,tt{background-color:#fafafa;border-radius:4px;font-size:85%;margin:0;padding:.2em 0}pre{background-color:#fafafa;border-radius:10px;border:1px solid #a4a4a4;font-size:85%;margin:20px;padding:10px;}pre code,pre tt{background:none}pre.language{counter-reset:line;max-height:265px;padding-top:30px;padding-bottom:0;overflow-x:hidden;}pre.language code,pre.language tt{display:block;position:relative;float:left;width:100%;border-left:45px solid #ddd;margin-left:-10px;padding-left:5px;}pre.language code:before,pre.language tt:before{counter-increment:line;content:counter(line);min-width:35px;float:left;text-align:right;padding-right:5px;color:#808080;-webkit-touch-callout:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-user-select:none;margin-left:-45px}pre.language code:first-of-type,pre.language tt:first-of-type{padding-top:10px}pre.language code:last-child,pre.language tt:last-child{padding-bottom:10px}pre.language header{border-top-left-radius:4px;border-top-right-radius:4px;font-weight:bold;background:#fafafa;margin:-30px -10px 0 -10px;padding:5px 15px}pre.language.coffeescript header,pre.language.javascript header,pre.language.ruby header,pre.language.python header,pre.language.perl header,pre.language.cc header,pre.language.cpp header,pre.language.cs header,pre.language.java header,pre.language.jsp header,pre.language.groovy header,pre.language.php header,pre.language.bash header,pre.language.sql header,pre.language.makefile header{background:#f0ad4e}pre.language.json header,pre.language.cson header,pre.language.yaml header{background:#61b961}pre.language.handlebars header,pre.language.css header,pre.language.stylus header,pre.language.scss header,pre.language.less header,pre.language.markdown header{background:#76abca}ul.table-of-contents{max-width:100px;max-height:30px;overflow:hidden;position:fixed;top:51px;right:0;background:#ddd;padding:5px 15px;-webkit-transition:max-width 100ms ease 1.2s, max-height 1s ease 200ms;-moz-transition:max-width 100ms ease 1.2s, max-height 1s ease 200ms;-o-transition:max-width 100ms ease 1.2s, max-height 1s ease 200ms;-ms-transition:max-width 100ms ease 1.2s, max-height 1s ease 200ms;transition:max-width 100ms ease 1.2s, max-height 1s ease 200ms;border-left:2px solid #999;border-bottom:2px solid #999;border-bottom-left-radius:10px;list-style-type:none;white-space:nowrap;z-index:100;}ul.table-of-contents:hover{max-width:285px;max-height:248px;-webkit-transition:max-width 100ms ease, max-height 1s ease 100ms;-moz-transition:max-width 100ms ease, max-height 1s ease 100ms;-o-transition:max-width 100ms ease, max-height 1s ease 100ms;-ms-transition:max-width 100ms ease, max-height 1s ease 100ms;transition:max-width 100ms ease, max-height 1s ease 100ms;overflow-y:auto}ul.table-of-contents header{background:#999;font-weight:bold;margin:-5px -15px;padding:5px 15px}ul.table-of-contents>li{padding-bottom:2px;padding-right:8px;}ul.table-of-contents>li:first-of-type{padding-top:10px}ul.table-of-contents a{color:#222}ul.table-of-contents li.sidebar{display:list-item}@media (min-width:768px){ul.table-of-contents li.sidebar{display:none}}div.detail,div.info,div.warning,div.alert{padding:30px 10px 6px 10px;margin:5px 0 8px 0;border-radius:3px;padding-left:60px;border-radius:18px;border-top-left-radius:0;}div.detail>p,div.info>p,div.warning>p,div.alert>p{margin-bottom:0}div.detail header,div.info header,div.warning header,div.alert header{font-weight:bold;position:absolute;margin-top:-30px;margin-left:-60px;padding:3px 20px 3px 10px;border-bottom-right-radius:18px}div:before{content:'\24D8';color:#666;position:absolute;font-size:28px;font-weight:900;padding-top:5px;margin-left:-50px}div.detail{background-color:#fafafa;border:2px solid #ddd;padding-top:0}div.info{background-color:#9f9;background-image:-webkit-linear-gradient(top, #bfb 0%, #6d6 100%);background-image:-moz-linear-gradient(top, #bfb 0%, #6d6 100%);background-image:-o-linear-gradient(top, #bfb 0%, #6d6 100%);background-image:-ms-linear-gradient(top, #bfb 0%, #6d6 100%);background-image:linear-gradient(to bottom, #bfb 0%, #6d6 100%);border:2px solid #6d6;}div.info header{background-color:#6d6}div.info:before{content:'\24D8';text-shadow:0 -1px 0 #6d6}div.warning{background-color:#fc9;background-image:-webkit-linear-gradient(top, #f97 0%, #e86 100%);background-image:-moz-linear-gradient(top, #f97 0%, #e86 100%);background-image:-o-linear-gradient(top, #f97 0%, #e86 100%);background-image:-ms-linear-gradient(top, #f97 0%, #e86 100%);background-image:linear-gradient(to bottom, #f97 0%, #e86 100%);border:2px solid #e86;}div.warning header{background-color:#e86}div.warning:before{content:'\2605';text-shadow:0 -1px 0 #e86}div.alert{background-color:#f99;background-image:-webkit-linear-gradient(top, #faa 0%, #c00 100%);background-image:-moz-linear-gradient(top, #faa 0%, #c00 100%);background-image:-o-linear-gradient(top, #faa 0%, #c00 100%);background-image:-ms-linear-gradient(top, #faa 0%, #c00 100%);background-image:linear-gradient(to bottom, #faa 0%, #c00 100%);border:2px solid #c00;}div.alert header{background-color:#c00;color:#fff}div.alert:before{content:'\24D8';text-shadow:0 -1px 0 #c00}.cse .gsc-control-cse,.gsc-control-cse{padding:0 !important;}.cse .gsc-control-cse table tr,.gsc-control-cse table tr,.cse .gsc-control-cse table th,.gsc-control-cse table th,.cse .gsc-control-cse table td,.gsc-control-cse table td{border:0}.cse .gsc-control-cse .gsc-cursor-current-page,.gsc-control-cse .gsc-cursor-current-page{color:#fff !important}.cse .gsc-control-cse .gsc-webResult.gsc-result:hover,.gsc-control-cse .gsc-webResult.gsc-result:hover,.cse .gsc-control-cse .gsc-imageResult:hover,.gsc-control-cse .gsc-imageResult:hover{border-left:5px solid #337ab7;padding-left:3px}.cse .gsc-control-cse .gcsc-branding,.gsc-control-cse .gcsc-branding{display:none !important}.gsc-adBlock{display:none !important}@media print{.navbar-spacer,.table-of-contents,.sidebar{display:none}.main{left:0;width:100%}pre.language header{border-bottom:2px solid #999}}.text-red{color:#d13f19}.text-green{color:#2ecc40}.text-yellow{color:#ffdc00}.text-blue{color:#0074d9}.text-magenta{color:#f0f}.text-cyan{color:#0ff}.text-gray{color:#aaa}.bg-white{background-color:#fff}.center{text-align:center}.left{float:left}.right{float:right}.spacing{padding:10px}.hidden{display:none}@media (max-width:767px){.hidden-small{display:none}}@media (min-width:768px){.hidden-large{display:none}}</style>
+  </head>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0" /></head>
-<body>
-  <nav>
-<div class="logo"><a href="http://alinex.github.io"
-  onmouseover="logo.src='https://alinex.github.io/images/Alinex-200.png'"
-  onmouseout="logo.src='https://alinex.github.io/images/Alinex-black-200.png'">
-  <img name="logo" src="https://alinex.github.io/images/Alinex-black-200.png"
-    width="150" title="Alinex Universe Homepage" />
-  </a>
-  <img src="http://alinex.github.io/images/Alinex-200.png"
-    style="display:none" alt="preloading" />
-</div>
-<div class="links">
-  <a href="http://alinex.github.io/blog"
-    class="btn btn-primary"><span class="glyphicon-pencil"></span> Blog</a>
-  <a href="http://alinex.github.io/develop"
-    class="btn btn-primary"><span class="glyphicon-book"></span> Develop</a>
-  <a href="http://alinex.github.io/code.html"
-    class="btn btn-warning"><span class="glyphicon-cog"></span> Code</a>
-</div>
-</nav><div id="sidebar_wrapper">
-    <div id="sidebar_switch">
-      <span class="tree">Files</span>
-      <span class="headings">Headings</span>
-    </div>
-    <div id="tree"></div>
-    <div id="headings">
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#topnav" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="https://alinex.github.io/" onmouseover="logo.src='https://alinex.github.io/images/Alinex-200.png'" onmouseout="logo.src='https://alinex.github.io/images/Alinex-black-200.png'">
+  <img name="logo" src="https://alinex.github.io/images/Alinex-black-200.png" width="150" title="Alinex Homepage">
+</a>
+<img class="preload" src="https://alinex.github.io/images/Alinex-200.png" aria-hidden="true">
 
-      <div class="heading h1">
-        <a href="#package-alinex-mail">Package: alinex-mail</a>
+        </div>
+        <div id="topnav" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="https://alinex.github.io/blog" class="btn btn-primary">
+    <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Blog
+  </a></li>
+<li><a href="https://alinex.github.io/develop" class="btn btn-primary">
+    <span class="glyphicon glyphicon-book" aria-hidden="true"></span> Develop
+  </a></li>
+<li><a href="https://alinex.github.io/code.html" class="btn btn-warning">
+    <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Code
+  </a></li>
+
+          </ul>
+          <form class="navbar-form navbar-right">
+            <input name="q" type="text" class="form-control" placeholder="Search...">
+          </form>
+          <ul class="nav sidebar-to-top">
+                <li class="active level0">
+                  <a href="README.md.html" title="Alinex Mail: Readme (/README.md)" class="btn btn-warning">Readme <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="level1">
+                  <a href="src/configSchema.coffee.html" title="Configuration (/src/configSchema.coffee)" class="btn btn-primary">Configuration</a>
+                </li>
+                <li class="level0">
+                  <a href="Changelog.md.html" title="Version changes (/Changelog.md)" class="btn btn-primary">Version changes</a>
+                </li>
+          </ul>
+        </div>
       </div>
+    </nav>
 
-      <div class="heading h2">
-        <a href="#install">Install</a>
-      </div>
+    <div class="navbar-spacer"></div>
 
-      <div class="heading h2">
-        <a href="#usage">Usage</a>
-      </div>
+    <div class="container-fluid">
+      <div class="row">
 
-      <div class="heading h2">
-        <a href="#configuration">Configuration</a>
-      </div>
+        <div class="col-sm-9 col-sm-push-3 main">
+          <script>
+  (function() {
+    var cx = '010539487162786288372:chxqbheanxc';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<gcse:searchresults-only></gcse:searchresults-only>
 
-      <div class="heading h3">
-        <a href="#email-templates">Email Templates</a>
-      </div>
-
-      <div class="heading h4">
-        <a href="#transport">Transport</a>
-      </div>
-
-      <div class="heading h4">
-        <a href="#addressing">Addressing</a>
-      </div>
-
-      <div class="heading h4">
-        <a href="#content">Content</a>
-      </div>
-
-      <div class="heading h2">
-        <a href="#license">License</a>
-      </div>
-
-    </div>
-  </div>
-  <div id="sidebar-toggle"></div>
-  <div id="container" tabindex="0"><a id="fork" href="https://github.com/alinex/node-mail" title="Fork me on GitHub"></a>
-    <div class="docs markdown"><div class="pilwrap" id="package-alinex-mail">
-  <h1>
-    <a href="#package-alinex-mail" name="package-alinex-mail" class="pilcrow"></a>
-Package: alinex-mail
-  </h1>
-</div>
-<p><a href="https://travis-ci.org/alinex/node-mail"><img src="https://travis-ci.org/alinex/node-mail.svg?branch=master" alt="Build Status"></a>
-<a href="https://coveralls.io/r/alinex/node-mail?branch=master"><img src="https://coveralls.io/repos/alinex/node-mail/badge.png?branch=master" alt="Coverage Status"></a>
-<a href="https://gemnasium.com/alinex/node-mail"><img src="https://gemnasium.com/alinex/node-mail.png" alt="Dependency Status"></a></p>
+          <main><p><ul class="table-of-contents" aria-hidden="true"><header>Index</header>
+<li><a href="#install">Install</a></li>
+<li><a href="#usage">Usage</a></li>
+<li><a href="#configuration">Configuration</a></li>
+<li><a href="#debugging">Debugging</a></li>
+<li><a href="#license">License</a></li>
+</ul>
+</p>
+<h1 id="alinex-mail-readme">Alinex Mail: Readme</h1>
+<p class="right"><a href="https://github.com/alinex/node-mail/subscription"><img src="https://img.shields.io/github/watchers/alinex/node-mail.svg?style=social&amp;label=Watch&amp;maxAge=2592000" alt="GitHub watchers" class="hidden-small" /></a>
+<a href="https://github.com/alinex/node-mail"><img src="https://img.shields.io/github/stars/alinex/node-mail.svg?style=social&amp;label=Star&amp;maxAge=2592000" alt="GitHub stars" /></a>
+<a href="https://github.com/alinex/node-mail"><img src="https://img.shields.io/github/forks/alinex/node-mail.svg?style=social&amp;label=Fork&amp;maxAge=2592000" alt="GitHub forks" class="hidden-small" /></a></p>
+<p><a href="https://www.npmjs.com/package/alinex-mail"><img src="https://img.shields.io/npm/v/alinex-mail.svg?maxAge=2592000&amp;label=latest%20version" alt="npm package" /></a>
+<a href="#license"><img src="https://img.shields.io/npm/l/alinex-mail.svg?maxAge=2592000" alt="latest version" class="hidden-small" /></a>
+<a href="https://travis-ci.org/alinex/node-mail"><img src="https://img.shields.io/travis/alinex/node-mail.svg?maxAge=2592000&amp;label=develop" alt="Travis status" /></a>
+<a href="https://coveralls.io/r/alinex/node-mail?branch=master"><img src="https://img.shields.io/coveralls/alinex/node-mail.svg?maxAge=2592000" alt="Coveralls status" /></a>
+<a href="https://gemnasium.com/alinex/node-mail"><img src="https://img.shields.io/gemnasium/alinex/node-mail.svg?maxAge=2592000" alt="Gemnasium status" /></a>
+<a href="https://github.com/alinex/node-mail/issues"><img src="https://img.shields.io/github/issues/alinex/node-mail.svg?maxAge=2592000" alt="GitHub issues" class="hidden-small" /></a></p>
 <p>An easy to use module for sending mails.</p>
 <ul>
 <li>fully configurable</li>
@@ -99,210 +111,136 @@ Package: alinex-mail
 <p>While sending mails it will also transform inline images in html into cid images
 attached to the mail to make it more standard conform.</p>
 <blockquote>
-<p>It is one of the modules of the <a href="http://alinex.github.io/code.html">Alinex Universe</a>
-following the code standards defined in the <a href="http://alinex.github.io/develop">General Docs</a>.</p>
+<p>It is one of the modules of the <a href="https://alinex.github.io/code.html">Alinex Namespace</a>
+following the code standards defined in the <a href="https://alinex.github.io/develop">General Docs</a>.</p>
 </blockquote>
-<div class="pilwrap" id="install">
-  <h2>
-    <a href="#install" name="install" class="pilcrow"></a>
-Install
-  </h2>
-</div>
-<p><a href="https://www.npmjs.com/package/alinex-mail"><img src="https://nodei.co/npm/alinex-mail.png?downloads=true&amp;downloadRank=true&amp;stars=true" alt="NPM">
-<img src="https://nodei.co/npm-dl/alinex-mail.png?months=9&amp;height=3" alt="Downloads">
+<p class="hidden"><strong>Read the complete documentation under
+<a href="https://alinex.github.io/node-mail">https://alinex.github.io/node-mail</a>.</strong></p>
+<h2 id="install">Install</h2>
+<p><a href="https://www.npmjs.com/package/alinex-mail"><img src="https://nodei.co/npm/alinex-mail.png?downloads=true&amp;downloadRank=true&amp;stars=true" alt="NPM" />
+<img src="https://nodei.co/npm-dl/alinex-mail.png?months=9&amp;height=3" alt="Downloads" />
 </a></p>
 <p>The easiest way is to let npm add the module directly to your modules
 (from within you node modules directory):</p>
-<pre><code class="sh">npm install alinex-mail --save
-</code></pre>
+<pre class="language bash"><header>Shell Script</header><code>npm install alinex-mail --save</code></pre>
 <p>And update it to the latest version later:</p>
-<pre><code class="sh">npm update alinex-mail --save
-</code></pre>
+<pre class="language bash"><header>Shell Script</header><code>npm update alinex-mail --save</code></pre>
 <p>This package will install a lot of subpackages to ensure the full functionality
 but only the ones really needed are loaded on demand.</p>
 <p>Always have a look at the latest <a href="Changelog.md.html">changes</a>.</p>
-<div class="pilwrap" id="usage">
-  <h2>
-    <a href="#usage" name="usage" class="pilcrow"></a>
-Usage
-  </h2>
-</div>
+<h2 id="usage">Usage</h2>
 <p>The first step is to load the module:</p>
-<pre><code class="coffee">mail = <span class="hljs-built_in">require</span> <span class="hljs-string">'alinex-mail'</span>
-</code></pre>
+<pre class="language coffeescript"><header>CoffeeScript Code</header><code>mail = <span class="hljs-built_in">require</span> <span class="hljs-string">'alinex-mail'</span></code></pre>
 <p>And now you simply send your mails:</p>
-<pre><code class="coffee">mail.send
-  base: <span class="hljs-string">'default'</span>
-  subject: <span class="hljs-string">'Test'</span>
-, context, <span class="hljs-function"><span class="hljs-params">(err)</span> -&gt;</span>
-  <span class="hljs-comment"># handling of errors or success</span>
-</code></pre>
+<pre class="language coffeescript"><header>CoffeeScript Code</header><code>mail.send</code>
+<code>  base: <span class="hljs-string">'default'</span></code>
+<code>  subject: <span class="hljs-string">'Test'</span></code>
+<code>, context, <span class="hljs-function"><span class="hljs-params">(err)</span> -&gt;</span></code>
+<code>  <span class="hljs-comment"># handling of errors or success</span></code></pre>
 <p>The above setup is all you may need to send an email. All the missing information
-is taken from it's base. Which is like always defined as a configuration setting.</p>
-<p>The context is optional and only used if the mail's body contains handlebars
+is taken from it’s base. Which is like always defined as a configuration setting.</p>
+<p>The context is optional and only used if the mail’s body contains handlebars
 templates.</p>
 <p>If you want to validate email settings within you applications configuration, you
 may use the schema from this package:</p>
-<pre><code class="coffee">emailSchema = <span class="hljs-built_in">require</span>(<span class="hljs-string">'alinex-mail/lib/configSchema'</span>).email
-</code></pre>
+<pre class="language coffeescript"><header>CoffeeScript Code</header><code>emailSchema = <span class="hljs-built_in">require</span>(<span class="hljs-string">'alinex-mail/lib/configSchema'</span>).email</code></pre>
 <p>You may also resolve the email templates before sending it:</p>
-<pre><code class="coffee">setup = mail.resolve setup
-</code></pre>
-<div class="pilwrap" id="configuration">
-  <h2>
-    <a href="#configuration" name="configuration" class="pilcrow"></a>
-Configuration
-  </h2>
-</div>
-<p>The configuration is based on multiple email templates.</p>
-<div class="pilwrap" id="email-templates">
-  <h3>
-    <a href="#email-templates" name="email-templates" class="pilcrow"></a>
-Email Templates
-  </h3>
-</div>
-<p>They will be defined under <code>/email</code>:</p>
-<pre><code class="yaml"><span class="hljs-comment"># Email Templates</span>
-<span class="hljs-comment"># =================================================</span>
-
-
-<span class="hljs-comment"># Default Email Templates</span>
-<span class="hljs-comment"># -------------------------------------------------</span>
-<span class="hljs-comment"># This will extend/overwrite the already existing setup within the code.</span>
-<span class="hljs-attr">default:</span>
-  <span class="hljs-comment"># specify how to connect to the server</span>
-<span class="hljs-attr">  transport:</span> smtp://alexander.schilling%<span class="hljs-number">40</span>mycompany.de:&lt;PASSWORD&gt;@mail.mycompany.de
-  <span class="hljs-comment"># specify retries</span>
-<span class="hljs-attr">  retry:</span>
-<span class="hljs-attr">    times:</span> <span class="hljs-number">1</span> <span class="hljs-comment"># makes 2 tries at max</span>
-<span class="hljs-attr">    interval:</span> <span class="hljs-number">5</span>s
-  <span class="hljs-comment"># sender address</span>
-<span class="hljs-attr">  from:</span> alexander.schilling@mycompany.de
-<span class="hljs-attr">  replyTo:</span> somebody@mycompany.de
-
-  <span class="hljs-comment"># content</span>
-<span class="hljs-attr">  locale:</span> en
-<span class="hljs-attr">  subject:</span> <span class="hljs-string">&gt;
-    Database Report: <span class="hljs-template-variable">{{name}}</span>
-</span><span class="hljs-attr">  body:</span> |+
-    {{conf.title}}
-    ==========================================================================
-
-    {{conf.description}}
-
-    Started at {{dateFormat date <span class="hljs-string">"LLL"</span>}}:
-
-    | Zeilen | Datei    | Beschreibung <span class="hljs-string">|
-    | ------:| -------- | ------------ |
-    <span class="hljs-template-variable">{{#each result}}</span>
-    | <span class="hljs-template-variable">{{rows}}</span> | <span class="hljs-template-variable">{{file}}</span> | <span class="hljs-template-variable">{{description}}</span> |
-    <span class="hljs-template-variable">{{/each}}</span>
-
-    Find the files attached to your mail if data available!
-</span></code></pre>
+<pre class="language coffeescript"><header>CoffeeScript Code</header><code>setup = mail.resolve setup</code></pre>
+<h2 id="configuration">Configuration</h2>
+<p>The configuration is based on multiple email templates. They can be made on top of
+each other.</p>
+<p>They will be defined under <code>/email</code> and  an example may look like:</p>
+<pre class="language yaml"><header>YAML Data</header><code><span class="hljs-comment"># Email Templates</span></code>
+<code><span class="hljs-comment"># =================================================</span></code>
+<code></code>
+<code></code>
+<code><span class="hljs-comment"># Default Email Templates</span></code>
+<code><span class="hljs-comment"># -------------------------------------------------</span></code>
+<code><span class="hljs-comment"># This will extend/overwrite the already existing setup within the code.</span></code>
+<code><span class="hljs-attr">default:</span></code>
+<code>  <span class="hljs-comment"># specify how to connect to the server</span></code>
+<code><span class="hljs-attr">  transport:</span> smtp://alexander.schilling%<span class="hljs-number">40</span>mycompany.de:&lt;PASSWORD&gt;@mail.mycompany.de</code>
+<code>  <span class="hljs-comment"># specify retries</span></code>
+<code><span class="hljs-attr">  retry:</span></code>
+<code><span class="hljs-attr">    times:</span> <span class="hljs-number">1</span> <span class="hljs-comment"># makes 2 tries at max</span></code>
+<code><span class="hljs-attr">    interval:</span> <span class="hljs-number">5</span>s</code>
+<code>  <span class="hljs-comment"># sender address</span></code>
+<code><span class="hljs-attr">  from:</span> alexander.schilling@mycompany.de</code>
+<code><span class="hljs-attr">  replyTo:</span> somebody@mycompany.de</code>
+<code></code>
+<code>  <span class="hljs-comment"># content</span></code>
+<code><span class="hljs-attr">  locale:</span> en</code>
+<code><span class="hljs-attr">  subject:</span> <span class="hljs-string">&gt;</span></code>
+<code><span class="hljs-string">    Database Report: <span class="hljs-template-variable">{{name}}</span></code>
+<code></span><span class="hljs-attr">  body:</span> |+</code>
+<code>    {{conf.title}}</code>
+<code>    ==========================================================================</code>
+<code></code>
+<code>    {{conf.description}}</code>
+<code></code>
+<code>    Started at {{dateFormat date <span class="hljs-string">"LLL"</span>}}:</code>
+<code></code>
+<code>    | Zeilen | Datei    | Beschreibung <span class="hljs-string">|</span></code>
+<code><span class="hljs-string">    | ------:| -------- | ------------ |</span></code>
+<code><span class="hljs-string">    <span class="hljs-template-variable">{{#each result}}</span></code>
+<code>    | <span class="hljs-template-variable">{{rows}}</span> | <span class="hljs-template-variable">{{file}}</span> | <span class="hljs-template-variable">{{description}}</span> |</code>
+<code>    <span class="hljs-template-variable">{{/each}}</span></code>
+<code></code>
+<code>    Find the files attached to your mail if data available!</code>
+<code></span></code></pre>
 <p>To make it more modular you may also add a <code>base</code> setting to use the setting defined
 there as a base and the options here may overwrite or enhance the base setup.</p>
-<div class="pilwrap" id="transport">
-  <h4>
-    <a href="#transport" name="transport" class="pilcrow"></a>
-Transport
-  </h4>
-</div>
-<p>The transport setting defines how to send the email. This should specify the
-connection for the mailserver to use for sending. It is possible to do this using
-a connection url like above with the syntax:</p>
-<pre><code>&lt;protocol&gt;://&lt;user&gt;:&lt;password&gt;@&lt;server&gt;:&lt;port&gt;
-</code></pre>
-<p>Or you may specify it as object like:</p>
-<pre><code class="yaml"><span class="hljs-attr">transport:</span>
-<span class="hljs-attr">  pool:</span> &lt;boolean&gt; <span class="hljs-comment"># use pooled connections defaults to false</span>
-<span class="hljs-attr">  direct:</span> &lt;boolean&gt; <span class="hljs-comment"># set to true to try to connect directly to recipients MX</span>
-<span class="hljs-attr">  service:</span> &lt;string&gt; <span class="hljs-comment"># name of well-known service (will set host, port and secure options)</span>
-  <span class="hljs-comment"># services: 1und1, AOL, DebugMail.io, DynectEmail, FastMail, GandiMail, Gmail,</span>
-  <span class="hljs-comment"># Godaddy, GodaddyAsia, GodaddyEurope, hot.ee, Hotmail, iCloud, mail.ee, Mail.ru,</span>
-  <span class="hljs-comment"># Mailgun, Mailjet, Mandrill, Naver, Postmark, QQ, QQex, SendCloud, SendGrid,</span>
-  <span class="hljs-comment"># SES, Sparkpost, Yahoo, Yandex, Zoho</span>
-<span class="hljs-attr">  host:</span> &lt;string&gt; <span class="hljs-comment"># the hostname or IP address to connect to</span>
-<span class="hljs-attr">  port:</span> &lt;integer&gt; <span class="hljs-comment"># the port to connect to (defaults to 25 or 465)</span>
-<span class="hljs-attr">  secure:</span> &lt;boolean&gt; <span class="hljs-comment"># if true the connection will only use TLS else (the default)</span>
-  <span class="hljs-comment"># TLS may still be upgraded to if available via the STARTTLS command</span>
-<span class="hljs-attr">  ignoreTLS:</span> &lt;boolean&gt; <span class="hljs-comment"># if this is true and secure is false, TLS will not be used</span>
-<span class="hljs-attr">  requireTLS:</span> &lt;boolean&gt; <span class="hljs-comment"># if this is true and secure is false, it uses STARTTLS</span>
-  <span class="hljs-comment"># even if the server does not advertise support for it</span>
-<span class="hljs-attr">  tls:</span> &lt;object&gt; <span class="hljs-comment"># additional socket options like `{rejectUnauthorized: true}`</span>
-<span class="hljs-attr">  auth:</span> <span class="hljs-comment"># authentication objects</span>
-<span class="hljs-attr">    user:</span> &lt;string&gt; <span class="hljs-comment"># the username</span>
-<span class="hljs-attr">    pass:</span> &lt;string&gt; <span class="hljs-comment"># the password for the user</span>
-<span class="hljs-attr">  authMethod:</span> &lt;string&gt; <span class="hljs-comment"># preferred authentication method, eg. ‘PLAIN’</span>
-<span class="hljs-attr">  name:</span> &lt;string&gt; <span class="hljs-comment"># hostname of the client, used for identifying to the server</span>
-<span class="hljs-attr">  localAddress:</span> &lt;string&gt; <span class="hljs-comment"># the local interface to bind to for network connections</span>
-<span class="hljs-attr">  connectionTimeout:</span> &lt;integer&gt; <span class="hljs-comment"># milliseconds to wait for the connection to establish</span>
-<span class="hljs-attr">  greetingTimeout:</span> &lt;integer&gt; <span class="hljs-comment"># milliseconds to wait for the greeting after connection is established</span>
-<span class="hljs-attr">  socketTimeout:</span> &lt;integer&gt; <span class="hljs-comment"># milliseconds of inactivity to allow</span>
-<span class="hljs-attr">  debug:</span> &lt;boolean&gt; <span class="hljs-comment"># set to true to log the complete SMTP traffic</span>
-  <span class="hljs-comment"># if pool is set to true:</span>
-<span class="hljs-attr">  maxConnections:</span> &lt;integer&gt; <span class="hljs-comment"># the count of maximum simultaneous connections (defaults to 5)</span>
-<span class="hljs-attr">  maxMessages:</span> &lt;integer&gt; <span class="hljs-comment"># limits the message count to be sent using a single connection (defaults to 100)</span>
-<span class="hljs-attr">  rateLimit:</span> &lt;integer&gt; <span class="hljs-comment"># limits the message count to be sent in a second (defaults to false)    </span>
-</code></pre>
-<div class="pilwrap" id="addressing">
-  <h4>
-    <a href="#addressing" name="addressing" class="pilcrow"></a>
-Addressing
-  </h4>
-</div>
-<p>First you can define the sender address using:</p>
-<pre><code class="yaml"><span class="hljs-attr">from:</span> &lt;string&gt; <span class="hljs-comment"># the address used as sender(often the same as used in transport)</span>
-<span class="hljs-attr">replyTo:</span> &lt;string&gt; <span class="hljs-comment"># address which should be used for replys</span>
-</code></pre>
-<p>And you give the addresses to send the mail to. In the following fields: <code>to</code>, <code>cc</code>
-and <code>bcc</code> you may give a single address or a list of addresses to use.
-All e-mail addresses can be plain e-mail addresses</p>
-<pre><code>name@mymailserver.com
-</code></pre>
-<p>or with formatted name (includes unicode support)</p>
-<pre><code>&quot;My Name&quot; &lt;name@mymailserver.com&gt;
-</code></pre>
-<div class="pilwrap" id="content">
-  <h4>
-    <a href="#content" name="content" class="pilcrow"></a>
-Content
-  </h4>
-</div>
-<p>The content of the mail consists of an subject line which should be not to long
-and the body. The body is given as <a href="http://alinex.github.io/develop/lang/markdown.html">Markdown</a>
-syntax and supports all possibilities from
-<a href="http://alinex.github.io/node-report/README.md.html#markup%20syntax">report</a>.
-This will be converted to a plain text and html version for sending so that the
-mail client can choose the format to display.</p>
-<p>You may also give the 'text' and 'html' content as property itself. But keep in
-mind that within the base properties no markdown conversions are done. In the
-'body' it will.</p>
-<p>Like you see above, you can use handlebar syntax to use some variables from the
-code. This is possible in subject and body. And you may specify a
-locale to use for date formatting.</p>
-<p>You can also define different templates which can be referenced from within the
-job.</p>
-<p>Find more examples at <a href="http://alinex.github.io/node-validator/README.md.html#handlebars">validator</a>.</p>
-<div class="pilwrap" id="license">
-  <h2>
-    <a href="#license" name="license" class="pilcrow"></a>
-License
-  </h2>
-</div>
-<p>Copyright 2016 Alexander Schilling</p>
-<p>Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+<p>Read more at the <a href="src/configSchema.coffee.html" title="File: configSchema.coffee">Configuration</a> page.</p>
+<h2 id="debugging">Debugging</h2>
+<p>If you have any problems you may always run it with debugging by setting the <code>DEBUG</code>
+environment variable like:</p>
+<pre class="language coffeescript"><header>CoffeeScript Code</header><code>DEBUG=mail* myprog-usingsshtunnel</code></pre>
+<p>The following targets are possible:</p>
+<ul>
+<li><code>mail</code> general logging</li>
+<li><code>mail:data</code> output all mail elements instead of only the envelope</li>
+</ul>
+<p>If you enable debugging of <code>mail</code> the given configuration will also be validated.</p>
+<h2 id="license">License</h2>
+<p>© Copyright 2016 Alexander Schilling</p>
+<p>Licensed under the Apache License, Version 2.0 (the “License”);
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at</p>
 <blockquote>
 <p><a href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</a></p>
 </blockquote>
 <p>Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+distributed under the License is distributed on an “AS IS” BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.</p>
-</div>
-  </div>
-</body>
+</main>
+        </div>
+        <div class="col-sm-3 col-cm-pull-9 sidebar">
+          <ul class="nav nav-sidebar">
+            <li class="header">
+              <a href="README.md.html">Alinex Mail</a>
+            </li>
+                <li class="active level0">
+                  <a href="README.md.html" title="Alinex Mail: Readme (/README.md)">Readme <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="level1">
+                  <a href="src/configSchema.coffee.html" title="Configuration (/src/configSchema.coffee)">Configuration</a>
+                </li>
+                <li class="level0">
+                  <a href="Changelog.md.html" title="Version changes (/Changelog.md)">Version changes</a>
+                </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script type="text/javascript"><!--
+    $(".table-of-contents").bind("mouseleave", function(event) { $(".table-of-contents").scrollTop(0); });
+    //--></script>
+  </body>
 </html>
